@@ -44,6 +44,7 @@ window.CONFIG = {
     facebook:  "",
     snapchat:  ""
   },
+  defaultLang: "ar",                         // اللغة الافتراضية: "ar" عربي أو "en" إنجليزي
   currency: { en: "AED", ar: "د.إ" },        // العملة
   payments: { en: ["Credit card", "Apple Pay", "Bank transfer", "Cash on delivery"],
               ar: ["بطاقة ائتمان", "Apple Pay", "تحويل بنكي", "الدفع عند الاستلام"] }, // طرق الدفع
@@ -146,6 +147,11 @@ window.CONFIG = {
 };
 </script>
 
+<script>
+(function(){try{var p=location.pathname.toLowerCase(),q=new URLSearchParams(location.search).get("lang"),s=null;try{s=localStorage.getItem("aura_lang")}catch(e){}
+var en=/\/en\/?$/.test(p)||q==="en"||location.hash.toLowerCase()==="#en"||(!/\/ar\/?$/.test(p)&&q!=="ar"&&s==="en")||(!s&&window.CONFIG.defaultLang==="en"&&!/\/ar\/?$/.test(p)&&q!=="ar");
+if(!en){document.documentElement.lang="ar";document.documentElement.dir="rtl";}}catch(e){}})();
+</script>
 <title>Aura Flowers | Flowers & Chocolate Gifts in the UAE · Toucans Chocolate</title>
 <meta name="description" content="Aura Flowers by Toucans Chocolate — fresh flowers, luxury chocolate trays, giveaways and National Day 55 gift boxes, delivered across the UAE. Order on WhatsApp.">
 <meta name="keywords" content="flowers UAE, chocolate gifts Dubai, flower delivery UAE, chocolate and flowers, National Day gifts, Eid Al Etihad chocolate, giveaways UAE, توزيعات, ورد وشوكولاتة, هدايا اليوم الوطني, شوكولاتة الإمارات, توصيل ورد دبي">
@@ -1273,7 +1279,7 @@ function detectLang(){
   if(/\/ar\/?$/.test(path) || q==="ar" || h==="#ar") return "ar";
   if(/\/en\/?$/.test(path) || q==="en" || h==="#en") return "en";
   try{ const s=localStorage.getItem("aura_lang"); if(s) return s; }catch(e){}
-  return (navigator.language||"en").toLowerCase().startsWith("ar") ? "ar" : "en";
+  return C.defaultLang || "ar";   // default language
 }
 renderHero();
 applyLang(detectLang(), false);
