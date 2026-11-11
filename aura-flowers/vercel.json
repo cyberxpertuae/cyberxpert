@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(AR|ar|EN|en)", "destination": "/index.html" }
+  ]
+}
