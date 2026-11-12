@@ -105,6 +105,24 @@ const CONFIG = {
   // AI agents platform — the login / sign-up address
   agentsUrl: "https://agent.cyberxpert.ae",
 
+  // ===== أعمالنا | OUR WORKS =====
+  // أضف أو احذف سطراً لإضافة أو حذف عمل. الصورة في مجلد assets.
+  // Add or delete a line to add or remove a project. Images live in /assets.
+  // img: 900x562 — name / nameAr = client, tag / tagAr = what it is, url = live site (اتركه فارغاً لإخفاء الرابط)
+  works: {
+    websites: [
+      { img:"assets/work1.webp", name:"MOTOZZLE",        nameAr:"موتوزل",        tag:"Automotive Marketplace",   tagAr:"سوق سيارات",            url:"" },
+      { img:"assets/work2.webp", name:"Jaguar Real Estate", nameAr:"جاكوار العقارية", tag:"Off-Plan Property",     tagAr:"عقارات على الخارطة",     url:"" },
+      { img:"assets/work3.webp", name:"Phenix Systems",  nameAr:"فينيكس سيستمز",  tag:"POS & Accounting Software", tagAr:"برامج نقاط بيع ومحاسبة", url:"" },
+      { img:"assets/work4.webp", name:"MSACO",           nameAr:"إم إس إيه كو",   tag:"IT & POS Support",          tagAr:"دعم تقني ونقاط بيع",     url:"" },
+      { img:"assets/work5.webp", name:"CPOS",            nameAr:"سي بي أو إس",    tag:"AI Development",            tagAr:"تطوير ذكاء اصطناعي",     url:"" },
+      { img:"assets/work6.webp", name:"Al Tamkin",       nameAr:"التمكين الريادي", tag:"Company Formation",        tagAr:"تأسيس شركات",            url:"" }
+    ],
+    // التطبيقات: فارغة الآن — القسم يختفي تلقائياً حتى تضيف أول تطبيق
+    // Apps: empty for now — the sub-section hides itself until you add one
+    apps: []
+  },
+
   // رابط الموقع الكامل | Full website address
   siteUrl: "https://www.cyberxpert.ae/",
 
@@ -143,14 +161,6 @@ const CONFIG = {
     facebook:  "",
     tiktok:    ""
   },
-
-  // الأرقام في شريط الإحصاءات | Numbers in the stats strip
-  stats: [
-    { value: 14,  suffix: "",   label: "Industries Served",   labelAr: "قطاعاً نخدمه" },
-    { value: 24,  suffix: "/7", label: "AI Agent Availability", labelAr: "عمل وكلاء الذكاء الاصطناعي" },
-    { value: 2,   suffix: "",   label: "Languages: EN + AR",  labelAr: "لغتان: عربي وإنجليزي" },
-    { value: 1,   suffix: "",   label: "Business Day Reply",  labelAr: "يوم عمل للرد عليك" }
-  ],
 
   // الألوان (نفس ألوان موتوزل) | Colors (same palette as MOTOZZLE)
   colors: {
@@ -233,6 +243,7 @@ const CONFIG = {
   --radius-card-alt: 8px 32px 8px 32px;
   --radius-pill: 999px 999px 12px 999px;
   --radius-img: 24px 24px 24px 4px;
+  --radius-img-alt: 24px 24px 4px 24px;
 
   --container: 1280px;
   --ease: cubic-bezier(0.22,1,0.36,1);
@@ -253,6 +264,7 @@ const CONFIG = {
   --radius-card-alt: 32px 8px 32px 8px;
   --radius-pill: 999px 999px 999px 12px;
   --radius-img: 24px 24px 4px 24px;
+  --radius-img-alt: 24px 24px 24px 4px;
 }
 @media (max-width:768px){
   [dir="rtl"]{
@@ -477,30 +489,8 @@ header.scrolled .logo-img, header.menu-open .logo-img{ filter:brightness(0) inve
 [dir="rtl"] .btn svg.dir-icon{ transform:scaleX(-1); }
 
 /* ---------- stats strip ---------- */
-.stats-strip{ padding:56px 0; background:var(--sand-soft); }
-.stats-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; text-align:center; }
-@media(min-width:768px){ .stats-grid{ grid-template-columns:repeat(4,1fr); } }
-.stat-badge{
-  width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;
-  background:rgba(20,20,22,0.85); -webkit-backdrop-filter:blur(14px) saturate(160%); backdrop-filter:blur(14px) saturate(160%);
-  border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.10), 0 12px 28px rgba(0,0,0,0.14);
-}
-.stat-badge svg{ width:24px; height:24px; stroke:var(--sand); }
-.stat-value{ font-family:var(--font-display); font-size:1.75rem; font-weight:600; color:var(--deep); direction:ltr; }
-.stat-label{ font-size:0.8125rem; color:var(--ink); opacity:0.75; margin-top:6px; }
 
 /* ---------- capability chips ---------- */
-.chip-row{ display:flex; gap:16px; overflow-x:auto; padding:8px 4px 24px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-.chip-row::-webkit-scrollbar{ display:none; }
-@media(min-width:1024px){ .chip-row{ flex-wrap:wrap; justify-content:center; overflow:visible; } }
-.chip{
-  flex:none; scroll-snap-align:start; display:flex; align-items:center; gap:12px;
-  background:rgba(20,20,22,0.82); color:var(--sand); padding:16px 26px; border-radius:var(--radius-pill);
-  -webkit-backdrop-filter:blur(16px) saturate(160%); backdrop-filter:blur(16px) saturate(160%);
-  border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.12);
-  transition:transform 300ms ease, background 300ms ease;
-}
-.chip:hover{ transform:translateY(-3px); background:rgba(30,30,33,0.88); }
 .chip svg{ width:22px; height:22px; stroke:var(--accent); flex:none; }
 
 /* ---------- numbered service cards ---------- */
@@ -623,6 +613,43 @@ header.scrolled .logo-img, header.menu-open .logo-img{ filter:brightness(0) inve
 .contact-lines .ic{ width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; flex:none; }
 .contact-lines svg{ width:18px; height:18px; stroke:var(--accent-pale); }
 .ltr{ direction:ltr; unicode-bidi:isolate; }
+
+/* ---------- our works ---------- */
+.works-group + .works-group{ margin-top:72px; }
+.works-label{
+  font-family:var(--font-ui); font-size:0.75rem; font-weight:500;
+  text-transform:uppercase; letter-spacing:0.18em; color:var(--accent);
+  text-align:center; margin-bottom:32px;
+}
+.works-label::after{
+  content:""; display:block; width:40px; height:1px; margin:14px auto 0;
+  background:var(--accent); opacity:0.4;
+}
+.works-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
+@media (min-width:640px){ .works-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .works-grid{ grid-template-columns:repeat(3,1fr); } }
+.work-card{ display:block; color:inherit; text-decoration:none; }
+.work-shot{
+  overflow:hidden; border-radius:var(--radius-img);
+  border:1px solid rgba(231,230,228,0.12); background:var(--deep-soft);
+  aspect-ratio:900/562;
+}
+.work-card:nth-child(even) .work-shot{ border-radius:var(--radius-img-alt); }
+.work-shot img{
+  width:100%; height:100%; object-fit:cover; object-position:top center;
+  display:block; transition:transform 600ms var(--ease);
+}
+.work-card:hover .work-shot img{ transform:scale(1.05); }
+.work-meta{ margin-top:18px; }
+.work-meta h4{
+  font-family:var(--font-ui); font-size:1.125rem; font-weight:500;
+  color:var(--sand); letter-spacing:0.01em;
+}
+.work-tag{
+  display:block; margin-top:6px; font-size:0.6875rem; font-weight:500;
+  text-transform:uppercase; letter-spacing:0.16em; color:var(--sand); opacity:0.55;
+}
+a.work-card:hover .work-meta h4{ color:var(--accent); }
 
 /* ---------- bottom bar ---------- */
 footer{ background:var(--sand); padding:40px 0 24px; }
@@ -781,57 +808,30 @@ dialog#privacyDialog::backdrop{ background:rgba(11,11,12,0.7); }
   </div>
 </section>
 
-<!-- ================= STATS STRIP (numbers come from CONFIG.stats) ================= -->
-<div class="stats-strip">
-  <div class="container">
-    <div class="stats-grid" id="statsGrid">
-      <div class="reveal">
-        <div class="stat-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></div>
-        <div class="stat-value"><span class="js-count">0</span><span class="js-suffix"></span></div>
-        <div class="stat-label js-stat-label"></div>
-      </div>
-      <div class="reveal">
-        <div class="stat-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div class="stat-value"><span class="js-count">0</span><span class="js-suffix"></span></div>
-        <div class="stat-label js-stat-label"></div>
-      </div>
-      <div class="reveal">
-        <div class="stat-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <div class="stat-value"><span class="js-count">0</span><span class="js-suffix"></span></div>
-        <div class="stat-label js-stat-label"></div>
-      </div>
-      <div class="reveal">
-        <div class="stat-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div>
-        <div class="stat-value"><span class="js-count">0</span><span class="js-suffix"></span></div>
-        <div class="stat-label js-stat-label"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= CAPABILITIES (chips) ================= -->
-<section class="panel-sand" id="capabilities">
+<!-- ================= OUR WORKS (cards come from CONFIG.works — أضف أو احذف من CONFIG) ================= -->
+<section class="panel-deep" id="works">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="caps.eyebrow">What We Build</span>
-      <h2 data-i18n="caps.h2">Smart Products,<br>End To End</h2>
+      <span class="eyebrow" data-i18n="works.eyebrow">Our Works</span>
+      <h2 data-i18n="works.h2">Built, Shipped,<br>Running.</h2>
+      <p data-i18n="works.p">A selection of the websites and apps we have designed, built and launched for businesses across the UAE and the GCC.</p>
       <div class="rule"></div>
     </div>
-    <div class="chip-row reveal">
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 16h5"/></svg><span data-i18n="caps.c1">AI Agents</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span data-i18n="caps.c2">WhatsApp Automation</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><span data-i18n="caps.c3">Instagram DM Agents</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7.2l3 2.6M16.5 7.2l-3 2.6M12 13v3"/></svg><span data-i18n="caps.c4">Machine Learning</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span data-i18n="caps.c5">Mobile Apps</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 8h20M8 21h8"/></svg><span data-i18n="caps.c6">Websites &amp; Stores</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span data-i18n="caps.c7">Data &amp; Analytics</span></div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.6 5.5L19 9l-5.4 1.5L12 16l-1.6-5.5L5 9l5.4-1.5z"/><path d="M18 16l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6z"/></svg><span data-i18n="caps.c8">AI Consulting</span></div>
+
+    <div class="works-group reveal" id="groupWebsites" hidden>
+      <h3 class="works-label" data-i18n="works.websites">Websites</h3>
+      <div class="works-grid" id="gridWebsites"></div>
+    </div>
+
+    <div class="works-group reveal" id="groupApps" hidden>
+      <h3 class="works-label" data-i18n="works.apps">Mobile Apps</h3>
+      <div class="works-grid" id="gridApps"></div>
     </div>
   </div>
 </section>
 
 <!-- ================= SERVICES (numbered cards — copy an <article> to add one) ================= -->
-<section class="panel-sand" id="services" style="padding-top:0;">
+<section class="panel-sand" id="services">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow" data-i18n="svc.eyebrow">Core Services</span>
@@ -1103,17 +1103,12 @@ const I18N_AR = {
   "hero.cta1": "استشارة مجانية",
   "hero.cta2": "استكشف خدماتنا",
 
-  "caps.eyebrow": "ماذا نبني",
-  "caps.h2": "منتجات ذكية،<br>من البداية للنهاية",
-  "caps.c1": "وكلاء الذكاء الاصطناعي",
-  "caps.c2": "أتمتة واتساب",
-  "caps.c3": "وكلاء رسائل انستقرام",
-  "caps.c4": "تعلّم الآلة",
-  "caps.c5": "تطبيقات الجوال",
-  "caps.c6": "مواقع ومتاجر إلكترونية",
-  "caps.c7": "البيانات والتحليلات",
-  "caps.c8": "استشارات الذكاء الاصطناعي",
 
+  "works.eyebrow": "أعمالنا",
+  "works.h2": "أنجزناها،<br>وأطلقناها.",
+  "works.p": "مختارات من المواقع والتطبيقات التي صممناها وبنيناها وأطلقناها لشركات في الإمارات والخليج.",
+  "works.websites": "مواقع إلكترونية",
+  "works.apps": "تطبيقات الجوال",
   "svc.eyebrow": "خدماتنا الأساسية",
   "svc.h2": "أربع طرق<br>ننقلك بها للأمام",
   "svc.p": "فريق واحد للذكاء الاصطناعي والتطبيق والمنصة المحيطة بهما، فلا يضيع شيء بين الموردين.",
@@ -1262,6 +1257,36 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
   function refreshWa(){ $$('.js-wa').forEach(a => a.href = waUrl(a.dataset.waKey)); }
 
   /* --- CONFIG → page --- */
+  /* --- our works: cards come straight from CONFIG.works --- */
+  function renderWorks(ar){
+    [['websites','groupWebsites','gridWebsites'], ['apps','groupApps','gridApps']].forEach(([key, groupId, gridId]) => {
+      const list = (CONFIG.works && CONFIG.works[key]) || [];
+      const group = document.getElementById(groupId), grid = document.getElementById(gridId);
+      if(!group || !grid) return;
+      group.hidden = list.length === 0;      // an empty list hides its sub-section
+      grid.innerHTML = '';
+      list.forEach(w => {
+        const name = ar ? (w.nameAr || w.name) : w.name;
+        const tag  = ar ? (w.tagAr  || w.tag)  : w.tag;
+        const card = document.createElement(w.url ? 'a' : 'article');
+        card.className = 'work-card';
+        if(w.url){ card.href = w.url; card.target = '_blank'; card.rel = 'noopener'; }
+        const shot = document.createElement('div'); shot.className = 'work-shot';
+        const img = document.createElement('img');
+        img.src = w.img; img.alt = name + ' — ' + tag;
+        img.loading = 'lazy'; img.decoding = 'async';
+        img.width = 900; img.height = 562;
+        shot.appendChild(img);
+        const meta = document.createElement('div'); meta.className = 'work-meta';
+        const h4 = document.createElement('h4'); h4.textContent = name;
+        const sp = document.createElement('span'); sp.className = 'work-tag'; sp.textContent = tag;
+        meta.append(h4, sp);
+        card.append(shot, meta);
+        grid.appendChild(card);
+      });
+    });
+  }
+
   function applyConfig(){
     const ar = isAr();
     $$('.js-logo').forEach(i => { i.src = CONFIG.logo; i.alt = ar ? CONFIG.nameAr : CONFIG.name; });
@@ -1278,15 +1303,7 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
       const url = CONFIG.social[a.dataset.social];
       if(url){ a.href = url; a.style.display = ''; } else { a.style.display = 'none'; }
     });
-    const stats = $$('#statsGrid > div');
-    CONFIG.stats.forEach((s, i) => {
-      const box = stats[i]; if(!box) return;
-      $('.js-count', box).dataset.target = s.value;
-      if(!$('.js-count', box).dataset.done) $('.js-count', box).textContent = '0';
-      $('.js-suffix', box).textContent = s.suffix || '';
-      $('.js-stat-label', box).textContent = ar ? s.labelAr : s.label;
-    });
-    stats.forEach((b, i) => { b.style.display = CONFIG.stats[i] ? '' : 'none'; });
+    renderWorks(ar);
     refreshWa();
   }
   // structured data only needs setting once
@@ -1391,23 +1408,11 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
 
   /* --- scroll reveal + stat counters --- */
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function countUp(el){
-    if(el.dataset.done) return; el.dataset.done = '1';
-    const target = +el.dataset.target || 0;
-    if(reduce){ el.textContent = target; return; }
-    const start = performance.now(), dur = 1400;
-    (function step(now){
-      const p = Math.min((now - start) / dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      if(p < 1) requestAnimationFrame(step);
-    })(start);
-  }
   const io = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
       if(entry.isIntersecting){
         setTimeout(() => {
           entry.target.classList.add('is-visible');
-          const c = $('.js-count', entry.target); if(c) countUp(c);
         }, (i % 4) * 100);
         io.unobserve(entry.target);
       }
