@@ -117,9 +117,14 @@ const CONFIG = {
       { img:"assets/work4.webp", name:"CPOS",            nameAr:"سي بي أو إس",    tag:"AI Development",            tagAr:"تطوير ذكاء اصطناعي",     url:"" },
       { img:"assets/work5.webp", name:"Al Tamkin",       nameAr:"التمكين الريادي", tag:"Company Formation",        tagAr:"تأسيس شركات",            url:"" }
     ],
-    // التطبيقات: فارغة الآن — القسم يختفي تلقائياً حتى تضيف أول تطبيق
-    // Apps: empty for now — the sub-section hides itself until you add one
-    apps: []
+    // التطبيقات — أضف img:"assets/app1.webp" لأي تطبيق لعرض لقطة شاشة بدلاً من البطاقة النصية
+    // Apps — add img:"assets/app1.webp" to any entry to show a screenshot instead of the text card
+    apps: [
+      { name:"ALHOR",          nameAr:"الحور",          tag:"Your companion in the journey", tagAr:"رفيقك في رحلتك",            url:"https://apps.apple.com/us/app/alhor/id1664758845" },
+      { name:"CORNER Shopping", nameAr:"كورنر للتسوق",   tag:"Shop UAE stores & flash deals", tagAr:"متاجر الإمارات وعروض سريعة", url:"https://apps.apple.com/us/app/corner-shopping/id6762640344" },
+      { name:"Made In UAE",    nameAr:"صنع في الإمارات", tag:"Built for the UAE",             tagAr:"مصنوع لأجل الإمارات",        url:"https://apps.apple.com/us/app/made-in-uae/id6782914328" },
+      { name:"Shopajy",        nameAr:"شوباجي",         tag:"Shop everything you love",      tagAr:"تسوّق كل ما تحب",            url:"https://apps.apple.com/us/app/shopajy/id6777558843" }
+    ]
   },
 
   // رابط الموقع الكامل | Full website address
@@ -627,6 +632,8 @@ header.scrolled .logo-img, header.menu-open .logo-img{ filter:brightness(0) inve
 .works-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
 @media (min-width:640px){ .works-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (min-width:1024px){ .works-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:1024px){ .works-grid--apps{ grid-template-columns:repeat(4,1fr); } }
+.works-grid--apps .work-card{ display:flex; flex-direction:column; }
 .work-card{ display:block; color:inherit; text-decoration:none; }
 .work-shot{
   overflow:hidden; border-radius:var(--radius-img);
@@ -639,6 +646,29 @@ header.scrolled .logo-img, header.menu-open .logo-img{ filter:brightness(0) inve
   display:block; transition:transform 600ms var(--ease);
 }
 .work-card:hover .work-shot img{ transform:scale(1.05); }
+.work-plate{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+  min-height:210px; flex:1; padding:28px 22px; text-align:center;
+  border-radius:var(--radius-img); border:1px solid rgba(231,230,228,0.12);
+  background:linear-gradient(180deg, var(--deep-soft) 0%, var(--deep) 100%);
+  transition:border-color 300ms var(--ease), transform 300ms var(--ease);
+}
+.work-card:nth-child(even) .work-plate{ border-radius:var(--radius-img-alt); }
+.work-card:hover .work-plate{ transform:translateY(-4px); border-color:rgba(184,183,180,0.4); }
+.work-plate-icon{
+  width:52px; height:52px; border-radius:50%; flex:none;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(231,230,228,0.22);
+}
+.work-plate-icon svg{ width:22px; height:22px; stroke:var(--accent); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.work-plate-name{
+  font-family:var(--font-display); font-size:1.5rem; font-weight:600;
+  color:var(--sand); letter-spacing:0.01em; line-height:1.2; max-width:16ch;
+}
+.work-store{
+  font-size:0.625rem; font-weight:500; text-transform:uppercase; letter-spacing:0.16em;
+  color:var(--accent); opacity:0.85;
+}
 .work-meta{ margin-top:18px; }
 .work-meta h4{
   font-family:var(--font-ui); font-size:1.125rem; font-weight:500;
@@ -824,7 +854,7 @@ dialog#privacyDialog::backdrop{ background:rgba(11,11,12,0.7); }
 
     <div class="works-group reveal" id="groupApps" hidden>
       <h3 class="works-label" data-i18n="works.apps">Mobile Apps</h3>
-      <div class="works-grid" id="gridApps"></div>
+      <div class="works-grid works-grid--apps" id="gridApps"></div>
     </div>
   </div>
 </section>
@@ -1270,16 +1300,36 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
         const card = document.createElement(w.url ? 'a' : 'article');
         card.className = 'work-card';
         if(w.url){ card.href = w.url; card.target = '_blank'; card.rel = 'noopener'; }
-        const shot = document.createElement('div'); shot.className = 'work-shot';
-        const img = document.createElement('img');
-        img.src = w.img; img.alt = name + ' — ' + tag;
-        img.loading = 'lazy'; img.decoding = 'async';
-        img.width = 900; img.height = 562;
-        shot.appendChild(img);
+        let shot;
+        if(w.img){
+          shot = document.createElement('div'); shot.className = 'work-shot';
+          const img = document.createElement('img');
+          img.src = w.img; img.alt = name + ' — ' + tag;
+          img.loading = 'lazy'; img.decoding = 'async';
+          img.width = 900; img.height = 562;
+          shot.appendChild(img);
+        } else {
+          // no screenshot yet: a typographic plate, same footprint
+          shot = document.createElement('div'); shot.className = 'work-plate';
+          const badge = document.createElement('div'); badge.className = 'work-plate-icon';
+          badge.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 18.5h3"/></svg>';
+          const title = document.createElement('div'); title.className = 'work-plate-name'; title.textContent = name;
+          shot.append(badge, title);
+          if(w.url && /apps\.apple\.com/.test(w.url)){
+            const store = document.createElement('span'); store.className = 'work-store';
+            store.textContent = ar ? 'آب ستور' : 'App Store';
+            shot.appendChild(store);
+          }
+        }
         const meta = document.createElement('div'); meta.className = 'work-meta';
-        const h4 = document.createElement('h4'); h4.textContent = name;
-        const sp = document.createElement('span'); sp.className = 'work-tag'; sp.textContent = tag;
-        meta.append(h4, sp);
+        if(w.img){
+          const h4 = document.createElement('h4'); h4.textContent = name;
+          const sp = document.createElement('span'); sp.className = 'work-tag'; sp.textContent = tag;
+          meta.append(h4, sp);
+        } else {
+          const sp = document.createElement('span'); sp.className = 'work-tag'; sp.textContent = tag;
+          meta.appendChild(sp);
+        }
         card.append(shot, meta);
         grid.appendChild(card);
       });
