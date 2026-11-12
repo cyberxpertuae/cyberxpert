@@ -117,13 +117,13 @@ const CONFIG = {
       { img:"assets/work4.webp", name:"CPOS",            nameAr:"سي بي أو إس",    tag:"AI Development",            tagAr:"تطوير ذكاء اصطناعي",     url:"https://cpos.ae" },
       { img:"assets/work5.webp", name:"Al Tamkin",       nameAr:"التمكين الريادي", tag:"Company Formation",        tagAr:"تأسيس شركات",            url:"https://altamkinqlriyadi.com" }
     ],
-    // التطبيقات — أضف img:"assets/app1.webp" لأي تطبيق لعرض لقطة شاشة بدلاً من البطاقة النصية
-    // Apps — add img:"assets/app1.webp" to any entry to show a screenshot instead of the text card
+    // التطبيقات — icon: أيقونة التطبيق (مربعة) | img: لقطة شاشة عريضة بدل البطاقة
+    // Apps — icon: the square app icon | img: a wide screenshot card instead
     apps: [
-      { name:"ALHOR",          nameAr:"الحور",          tag:"Your companion in the journey", tagAr:"رفيقك في رحلتك",            url:"https://apps.apple.com/us/app/alhor/id1664758845" },
-      { name:"CORNER Shopping", nameAr:"كورنر للتسوق",   tag:"Shop UAE stores & flash deals", tagAr:"متاجر الإمارات وعروض سريعة", url:"https://apps.apple.com/us/app/corner-shopping/id6762640344" },
-      { name:"Made In UAE",    nameAr:"صنع في الإمارات", tag:"Built for the UAE",             tagAr:"مصنوع لأجل الإمارات",        url:"https://apps.apple.com/us/app/made-in-uae/id6782914328" },
-      { name:"Shopajy",        nameAr:"شوباجي",         tag:"Shop everything you love",      tagAr:"تسوّق كل ما تحب",            url:"https://apps.apple.com/us/app/shopajy/id6777558843" }
+      { icon:"assets/app1.webp", name:"ALHOR",          nameAr:"الحور",          tag:"Your companion in the journey", tagAr:"رفيقك في رحلتك",            url:"https://apps.apple.com/us/app/alhor/id1664758845" },
+      { icon:"assets/app2.webp", name:"CORNER Shopping", nameAr:"كورنر للتسوق",   tag:"Shop UAE stores & flash deals", tagAr:"متاجر الإمارات وعروض سريعة", url:"https://apps.apple.com/us/app/corner-shopping/id6762640344" },
+      { icon:"assets/app3.webp", name:"Made In UAE",    nameAr:"صنع في الإمارات", tag:"Built for the UAE",             tagAr:"مصنوع لأجل الإمارات",        url:"https://apps.apple.com/us/app/made-in-uae/id6782914328" },
+      { icon:"assets/app4.webp", name:"Shopajy",        nameAr:"شوباجي",         tag:"Shop everything you love",      tagAr:"تسوّق كل ما تحب",            url:"https://apps.apple.com/us/app/shopajy/id6777558843" }
     ]
   },
 
@@ -676,6 +676,11 @@ header.scrolled .logo-img, header.menu-open .logo-img{ filter:brightness(0) inve
   border:1px solid rgba(231,230,228,0.22);
 }
 .work-plate-icon svg{ width:22px; height:22px; stroke:var(--accent); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.work-plate img.work-plate-appicon{
+  width:88px; height:88px; flex:none; border-radius:22px; object-fit:cover;
+  border:1px solid rgba(231,230,228,0.14);
+  box-shadow:0 14px 32px rgba(0,0,0,0.30);
+}
 .work-plate-name{
   font-family:var(--font-display); font-size:1.5rem; font-weight:600;
   color:var(--sand); letter-spacing:0.01em; line-height:1.2; max-width:16ch;
@@ -1326,8 +1331,17 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
         } else {
           // no screenshot yet: a typographic plate, same footprint
           shot = document.createElement('div'); shot.className = 'work-plate';
-          const badge = document.createElement('div'); badge.className = 'work-plate-icon';
-          badge.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 18.5h3"/></svg>';
+          let badge;
+          if(w.icon){
+            badge = document.createElement('img');
+            badge.className = 'work-plate-appicon';
+            badge.src = w.icon; badge.alt = name + ' app icon';
+            badge.loading = 'lazy'; badge.decoding = 'async';
+            badge.width = 300; badge.height = 300;
+          } else {
+            badge = document.createElement('div'); badge.className = 'work-plate-icon';
+            badge.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 18.5h3"/></svg>';
+          }
           const title = document.createElement('div'); title.className = 'work-plate-name'; title.textContent = name;
           shot.append(badge, title);
           if(w.url && /apps\.apple\.com/.test(w.url)){
