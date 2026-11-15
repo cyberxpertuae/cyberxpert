@@ -1050,7 +1050,7 @@ function ui(){
   const hdr=$("#hdr"), fc=$("#fcta"), body=document.body;
   const onScroll=()=>{
     hdr.classList.toggle("solid", scrollY>80 || body.classList.contains("menu-open"));
-    const heroH=$("#hero").offsetHeight; const nearEnd = (innerHeight+scrollY) > document.body.scrollHeight-260;
+    const heroH=$("#hero").offsetHeight; const nearEnd = $("#contact").getBoundingClientRect().top < innerHeight*.85;
     fc.classList.toggle("show", scrollY>heroH*.8 && !nearEnd);
     // theme under the pill
     const y=innerHeight-50; const sec=$$("[data-theme]").find(s=>{const r=s.getBoundingClientRect(); return r.top<=y && r.bottom>=y;});
