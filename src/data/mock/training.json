@@ -1,0 +1,79 @@
+{
+  "programs": [
+    { "id": "pg-coach", "img": "hero-deadlift", "goal": "muscle", "level": 2, "weeks": 8, "perWeek": 4, "coach": "co-omar", "assigned": true,
+      "name": { "en": "Omar's Strength Block (yours)", "ar": "برنامج القوة من عمر (خاص بك)" }, "desc": { "en": "Built for you by Coach Omar after your InBody scan. Upper/lower split with progressive overload.", "ar": "صممه لك المدرب عمر بعد فحص InBody. تقسيم علوي/سفلي مع زيادة تدريجية في الأحمال." },
+      "days": [
+        { "id": "d1", "name": { "en": "Upper A · Push focus", "ar": "علوي أ · تركيز الدفع" }, "ex": ["ex-bench","ex-incline","ex-shoulder","ex-fly","ex-pushdown"] },
+        { "id": "d2", "name": { "en": "Lower A · Squat focus", "ar": "سفلي أ · تركيز السكوات" }, "ex": ["ex-squat","ex-leg-press","ex-leg-curl","ex-leg-ext","ex-plank"] },
+        { "id": "d3", "name": { "en": "Upper B · Pull focus", "ar": "علوي ب · تركيز السحب" }, "ex": ["ex-lat","ex-row","ex-db-row","ex-rear-delt","ex-curl"] },
+        { "id": "d4", "name": { "en": "Lower B · Hinge focus", "ar": "سفلي ب · تركيز الرفعة الميتة" }, "ex": ["ex-deadlift","ex-smith-squat","ex-lunge","ex-leg-curl","ex-rower"] }
+      ] },
+    { "id": "pg-beginner", "img": "s-pt", "goal": "fit", "level": 1, "weeks": 4, "perWeek": 3, "coach": "co-raj", "assigned": false,
+      "name": { "en": "First 30 Days: Machine Basics", "ar": "أول ٣٠ يوم: أساسيات الأجهزة" }, "desc": { "en": "Learn every key machine safely. Full body 3× a week, 40 minutes.", "ar": "تعلّم أهم الأجهزة بأمان. تمرين كامل للجسم ٣ مرات أسبوعياً لمدة ٤٠ دقيقة." },
+      "days": [
+        { "id": "d1", "name": { "en": "Full Body A", "ar": "الجسم كاملاً أ" }, "ex": ["ex-leg-press","ex-chest-press","ex-lat","ex-shoulder","ex-treadmill"] },
+        { "id": "d2", "name": { "en": "Full Body B", "ar": "الجسم كاملاً ب" }, "ex": ["ex-goblet","ex-row","ex-incline","ex-leg-curl","ex-bike"] },
+        { "id": "d3", "name": { "en": "Full Body C", "ar": "الجسم كاملاً ج" }, "ex": ["ex-leg-ext","ex-fly","ex-lat","ex-lateral","ex-plank"] }
+      ] },
+    { "id": "pg-fatloss", "img": "c-functional", "goal": "lose", "level": 2, "weeks": 6, "perWeek": 4, "coach": "co-layla", "assigned": false,
+      "name": { "en": "Shred 6: Fat Loss", "ar": "شريد ٦: خسارة الدهون" }, "desc": { "en": "Strength circuits plus incline cardio to drop fat while keeping muscle.", "ar": "دوائر قوة مع كارديو على الميلان لخسارة الدهون مع الحفاظ على العضل." },
+      "days": [
+        { "id": "d1", "name": { "en": "Circuit Lower", "ar": "دائرة سفلية" }, "ex": ["ex-goblet","ex-leg-press","ex-lunge","ex-ropes","ex-treadmill"] },
+        { "id": "d2", "name": { "en": "Circuit Upper", "ar": "دائرة علوية" }, "ex": ["ex-chest-press","ex-row","ex-shoulder","ex-pushdown","ex-rower"] },
+        { "id": "d3", "name": { "en": "Conditioning", "ar": "تحمّل" }, "ex": ["ex-bike","ex-ropes","ex-plank","ex-treadmill"] },
+        { "id": "d4", "name": { "en": "Full Body Burn", "ar": "حرق كامل الجسم" }, "ex": ["ex-smith-squat","ex-lat","ex-incline","ex-leg-curl","ex-bike"] }
+      ] },
+    { "id": "pg-ppl", "img": "m-cable-crossover", "goal": "muscle", "level": 3, "weeks": 8, "perWeek": 6, "coach": "co-raj", "assigned": false,
+      "name": { "en": "Push · Pull · Legs", "ar": "دفع · سحب · أرجل" }, "desc": { "en": "Classic 6-day bodybuilding split for experienced lifters.", "ar": "تقسيم كمال أجسام كلاسيكي ٦ أيام للمتقدمين." },
+      "days": [
+        { "id": "d1", "name": { "en": "Push", "ar": "دفع" }, "ex": ["ex-bench","ex-shoulder","ex-incline","ex-cable-fly","ex-lateral","ex-pushdown"] },
+        { "id": "d2", "name": { "en": "Pull", "ar": "سحب" }, "ex": ["ex-deadlift","ex-lat","ex-row","ex-rear-delt","ex-curl"] },
+        { "id": "d3", "name": { "en": "Legs", "ar": "أرجل" }, "ex": ["ex-squat","ex-leg-press","ex-leg-ext","ex-leg-curl","ex-plank"] }
+      ] },
+    { "id": "pg-strength", "img": "m-squat-rack", "goal": "strength", "level": 3, "weeks": 12, "perWeek": 3, "coach": "co-omar", "assigned": false,
+      "name": { "en": "Empire 5×5 Strength", "ar": "إمباير ٥×٥ للقوة" }, "desc": { "en": "Squat, bench and deadlift heavy three times a week.", "ar": "سكوات وبنش ورفعة ميتة بأوزان ثقيلة ثلاث مرات أسبوعياً." },
+      "days": [
+        { "id": "d1", "name": { "en": "Day A", "ar": "اليوم أ" }, "ex": ["ex-squat","ex-bench","ex-row"] },
+        { "id": "d2", "name": { "en": "Day B", "ar": "اليوم ب" }, "ex": ["ex-squat","ex-shoulder","ex-deadlift"] }
+      ] },
+    { "id": "pg-home", "img": "s-online", "goal": "fit", "level": 1, "weeks": 4, "perWeek": 3, "coach": "co-sophie", "assigned": false,
+      "name": { "en": "Home & Travel (online)", "ar": "البيت والسفر (أونلاين)" }, "desc": { "en": "Dumbbells and bands only — for online members and travel weeks.", "ar": "دمبلز وأحزمة مقاومة فقط — للمشتركين أونلاين وأسابيع السفر." },
+      "days": [
+        { "id": "d1", "name": { "en": "Total Body", "ar": "الجسم كاملاً" }, "ex": ["ex-goblet","ex-db-row","ex-lunge","ex-lateral","ex-plank"] },
+        { "id": "d2", "name": { "en": "Arms & Core", "ar": "الذراعان والبطن" }, "ex": ["ex-curl","ex-lateral","ex-plank","ex-lunge"] }
+      ] }
+  ],
+  "foods": [
+    { "id": "f-oats", "cat": "breakfast", "name": { "en": "Oats with milk", "ar": "شوفان بالحليب" }, "serving": { "en": "1 bowl (250 g)", "ar": "صحن (٢٥٠ جم)" }, "kcal": 310, "p": 12, "c": 48, "f": 7 },
+    { "id": "f-eggs", "cat": "breakfast", "name": { "en": "Boiled eggs", "ar": "بيض مسلوق" }, "serving": { "en": "2 eggs", "ar": "بيضتان" }, "kcal": 156, "p": 13, "c": 1, "f": 11 },
+    { "id": "f-foul", "cat": "breakfast", "name": { "en": "Foul medames", "ar": "فول مدمس" }, "serving": { "en": "1 bowl (200 g)", "ar": "صحن (٢٠٠ جم)" }, "kcal": 230, "p": 13, "c": 33, "f": 6 },
+    { "id": "f-labneh", "cat": "breakfast", "name": { "en": "Labneh with olive oil", "ar": "لبنة بزيت الزيتون" }, "serving": { "en": "3 tbsp", "ar": "٣ ملاعق كبيرة" }, "kcal": 180, "p": 6, "c": 4, "f": 15 },
+    { "id": "f-khubz", "cat": "breakfast", "name": { "en": "Arabic bread", "ar": "خبز عربي" }, "serving": { "en": "1 piece", "ar": "رغيف واحد" }, "kcal": 165, "p": 5, "c": 33, "f": 1 },
+    { "id": "f-chicken", "cat": "lunch", "name": { "en": "Grilled chicken breast", "ar": "صدر دجاج مشوي" }, "serving": { "en": "150 g", "ar": "١٥٠ جم" }, "kcal": 248, "p": 46, "c": 0, "f": 5 },
+    { "id": "f-rice", "cat": "lunch", "name": { "en": "White rice", "ar": "أرز أبيض" }, "serving": { "en": "1 cup (180 g)", "ar": "كوب (١٨٠ جم)" }, "kcal": 234, "p": 4, "c": 51, "f": 1 },
+    { "id": "f-machboos", "cat": "lunch", "name": { "en": "Chicken machboos", "ar": "مجبوس دجاج" }, "serving": { "en": "1 plate (350 g)", "ar": "صحن (٣٥٠ جم)" }, "kcal": 620, "p": 38, "c": 72, "f": 18 },
+    { "id": "f-shawarma", "cat": "lunch", "name": { "en": "Chicken shawarma wrap", "ar": "ساندويتش شاورما دجاج" }, "serving": { "en": "1 wrap", "ar": "ساندويتش واحد" }, "kcal": 480, "p": 28, "c": 42, "f": 21 },
+    { "id": "f-salmon", "cat": "dinner", "name": { "en": "Grilled salmon", "ar": "سلمون مشوي" }, "serving": { "en": "150 g", "ar": "١٥٠ جم" }, "kcal": 310, "p": 34, "c": 0, "f": 19 },
+    { "id": "f-hammour", "cat": "dinner", "name": { "en": "Grilled hammour", "ar": "هامور مشوي" }, "serving": { "en": "200 g", "ar": "٢٠٠ جم" }, "kcal": 220, "p": 46, "c": 0, "f": 3 },
+    { "id": "f-quinoa", "cat": "dinner", "name": { "en": "Quinoa bowl", "ar": "سلطة كينوا" }, "serving": { "en": "1 bowl", "ar": "صحن" }, "kcal": 380, "p": 14, "c": 52, "f": 12 },
+    { "id": "f-hummus", "cat": "snacks", "name": { "en": "Hummus", "ar": "حمص" }, "serving": { "en": "4 tbsp", "ar": "٤ ملاعق كبيرة" }, "kcal": 140, "p": 4, "c": 12, "f": 8 },
+    { "id": "f-fattoush", "cat": "lunch", "name": { "en": "Fattoush salad", "ar": "سلطة فتوش" }, "serving": { "en": "1 bowl", "ar": "صحن" }, "kcal": 190, "p": 4, "c": 20, "f": 11 },
+    { "id": "f-dates", "cat": "snacks", "name": { "en": "Dates (khalas)", "ar": "تمر خلاص" }, "serving": { "en": "3 dates", "ar": "٣ تمرات" }, "kcal": 70, "p": 1, "c": 18, "f": 0 },
+    { "id": "f-karak", "cat": "snacks", "name": { "en": "Karak tea", "ar": "شاي كرك" }, "serving": { "en": "1 cup", "ar": "كوب" }, "kcal": 120, "p": 3, "c": 18, "f": 4 },
+    { "id": "f-banana", "cat": "snacks", "name": { "en": "Banana", "ar": "موز" }, "serving": { "en": "1 medium", "ar": "حبة متوسطة" }, "kcal": 105, "p": 1, "c": 27, "f": 0 },
+    { "id": "f-whey", "cat": "snacks", "name": { "en": "Whey shake (water)", "ar": "مخفوق واي (بالماء)" }, "serving": { "en": "1 scoop", "ar": "مكيال" }, "kcal": 120, "p": 25, "c": 2, "f": 1 },
+    { "id": "f-bar", "cat": "snacks", "name": { "en": "Protein bar", "ar": "لوح بروتين" }, "serving": { "en": "1 bar (60 g)", "ar": "لوح (٦٠ جم)" }, "kcal": 210, "p": 20, "c": 22, "f": 7 },
+    { "id": "f-laban", "cat": "snacks", "name": { "en": "Laban up", "ar": "لبن أب" }, "serving": { "en": "1 bottle", "ar": "عبوة" }, "kcal": 110, "p": 6, "c": 9, "f": 5 },
+    { "id": "f-greek", "cat": "breakfast", "name": { "en": "Greek yogurt & berries", "ar": "زبادي يوناني مع توت" }, "serving": { "en": "1 cup", "ar": "كوب" }, "kcal": 190, "p": 18, "c": 20, "f": 4 },
+    { "id": "f-beef", "cat": "dinner", "name": { "en": "Lean beef kofta", "ar": "كفتة لحم قليلة الدهن" }, "serving": { "en": "4 skewers", "ar": "٤ أسياخ" }, "kcal": 360, "p": 32, "c": 4, "f": 24 },
+    { "id": "f-sweetpotato", "cat": "dinner", "name": { "en": "Baked sweet potato", "ar": "بطاطا حلوة مشوية" }, "serving": { "en": "1 medium", "ar": "حبة متوسطة" }, "kcal": 115, "p": 2, "c": 27, "f": 0 },
+    { "id": "f-avocado", "cat": "snacks", "name": { "en": "Avocado toast", "ar": "توست أفوكادو" }, "serving": { "en": "1 slice", "ar": "شريحة" }, "kcal": 240, "p": 6, "c": 24, "f": 14 },
+    { "id": "f-luqaimat", "cat": "snacks", "name": { "en": "Luqaimat", "ar": "لقيمات" }, "serving": { "en": "5 pieces", "ar": "٥ حبات" }, "kcal": 280, "p": 3, "c": 38, "f": 13 }
+  ],
+  "mealPlan": [
+    { "meal": "breakfast", "time": "07:30", "items": ["f-oats","f-eggs"] },
+    { "meal": "lunch", "time": "13:00", "items": ["f-chicken","f-rice","f-fattoush"] },
+    { "meal": "snacks", "time": "16:30", "items": ["f-whey","f-banana","f-dates"] },
+    { "meal": "dinner", "time": "20:30", "items": ["f-salmon","f-sweetpotato"] }
+  ]
+}

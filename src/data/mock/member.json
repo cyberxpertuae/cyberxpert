@@ -1,0 +1,138 @@
+{
+  "user": {
+    "id": "EMP-20418", "name": "Khalid Al Hammadi", "firstName": { "en": "Khalid", "ar": "خالد" }, "fullName": { "en": "Khalid Al Hammadi", "ar": "خالد الحمادي" },
+    "phone": "50 112 4587", "email": "khalid.h@example.ae", "gender": "male", "dob": "1997-03-12", "avatar": "u-avatar",
+    "emergency": { "name": "Ahmed Al Hammadi", "phone": "50 998 2210" },
+    "goal": "muscle", "height": 178, "weight": 82.4, "target": 78, "activity": "moderate", "experience": "intermediate",
+    "points": 4380, "lifetimePoints": 7240, "tier": "gold", "streak": 6, "workouts": 86, "joined": "2025-04-02", "referral": "KHALID-EMP"
+  },
+  "membership": {
+    "id": "MB-77120", "plan": "pl-half", "status": "active", "start": "2026-08-10", "end": "2027-02-10", "freezeLeft": 30, "autoRenew": true, "branch": { "en": "Mussafah, Abu Dhabi", "ar": "مصفح، أبوظبي" }, "visits": 58
+  },
+  "notifications": [
+    { "id": "n1", "type": "offers", "icon": "pricetag", "time": "2026-11-15T09:12:00", "read": false, "title": { "en": "World Cup deal is live ⚽", "ar": "عرض كأس العالم بدأ ⚽" }, "body": { "en": "25% off 6-month plans with code GOAL25.", "ar": "خصم ٢٥٪ على اشتراك ٦ أشهر بالكود GOAL25." }, "link": "/offers/of-worldcup" },
+    { "id": "n2", "type": "bookings", "icon": "calendar", "time": "2026-11-15T08:00:00", "read": false, "title": { "en": "Boxing Fit at 7:00 PM today", "ar": "ملاكمة لياقة اليوم ٧:٠٠ م" }, "body": { "en": "Your spot is confirmed with Coach Omar.", "ar": "تم تأكيد مكانك مع المدرب عمر." }, "link": "/bookings" },
+    { "id": "n3", "type": "membership", "icon": "card", "time": "2026-11-14T18:30:00", "read": false, "title": { "en": "You reached Gold 🏆", "ar": "وصلت للمستوى الذهبي 🏆" }, "body": { "en": "Enjoy 10% off and 1.5× points.", "ar": "استمتع بخصم ١٠٪ ونقاط ×١٫٥." }, "link": "/rewards" },
+    { "id": "n4", "type": "offers", "icon": "flash", "time": "2026-11-14T12:00:00", "read": true, "title": { "en": "Energy drinks back in stock", "ar": "مشروبات الطاقة عادت للتوفر" }, "body": { "en": "C4, C5 & ABE — buy 5 get 1 free.", "ar": "C4 وC5 وABE — اشترِ ٥ واحصل على ١ مجاناً." }, "link": "/offers/of-energy" },
+    { "id": "n5", "type": "bookings", "icon": "barbell", "time": "2026-11-13T20:10:00", "read": true, "title": { "en": "New workout from Coach Omar", "ar": "تمرين جديد من المدرب عمر" }, "body": { "en": "Week 4 of your Strength Block is ready.", "ar": "الأسبوع ٤ من برنامج القوة جاهز." }, "link": "/training/plan/pg-coach" },
+    { "id": "n6", "type": "membership", "icon": "receipt", "time": "2026-11-12T10:00:00", "read": true, "title": { "en": "Payment received", "ar": "تم استلام الدفعة" }, "body": { "en": "AED 1,468.95 for 6 Months plan.", "ar": "١٬٤٦٨٫٩٥ درهم لاشتراك ٦ أشهر." }, "link": "/membership/invoices" },
+    { "id": "n7", "type": "offers", "icon": "gift", "time": "2026-11-11T16:45:00", "read": true, "title": { "en": "300 points for your streak 🔥", "ar": "٣٠٠ نقطة لسلسلة تمارينك 🔥" }, "body": { "en": "6 days in a row — keep going!", "ar": "٦ أيام متتالية — استمر!" }, "link": "/rewards/history" },
+    { "id": "n8", "type": "bookings", "icon": "bag", "time": "2026-11-10T14:20:00", "read": true, "title": { "en": "Order EG-1042 is ready for pickup", "ar": "الطلب EG-1042 جاهز للاستلام" }, "body": { "en": "Collect it at reception.", "ar": "استلمه من الاستقبال." }, "link": "/shop/orders" },
+    { "id": "n9", "type": "membership", "icon": "time", "time": "2026-11-08T09:00:00", "read": true, "title": { "en": "Ladies hours updated", "ar": "تم تحديث ساعات السيدات" }, "body": { "en": "Now daily 10 AM – 2 PM.", "ar": "الآن يومياً ١٠ ص – ٢ م." }, "link": "/info/about" },
+    { "id": "n10", "type": "offers", "icon": "flag", "time": "2026-11-05T11:00:00", "read": true, "title": { "en": "Eid Al Etihad: +2 months free", "ar": "عيد الاتحاد: شهرين مجاناً" }, "body": { "en": "On annual plans until 5 Dec.", "ar": "على الاشتراك السنوي حتى ٥ ديسمبر." }, "link": "/offers/of-national" }
+  ],
+  "orders": [
+    { "id": "EG-1051", "date": "2026-11-14", "status": "processing", "method": "pickup", "items": [ { "id": "pr-whey", "qty": 1, "opt": 0 }, { "id": "pr-shaker", "qty": 1, "opt": null } ], "total": 324 },
+    { "id": "EG-1048", "date": "2026-11-12", "status": "shipped", "method": "delivery", "items": [ { "id": "pr-pack", "qty": 1, "opt": null } ], "total": 119 },
+    { "id": "EG-1042", "date": "2026-11-10", "status": "ready", "method": "pickup", "items": [ { "id": "pr-c4", "qty": 6, "opt": 1 } ], "total": 60 },
+    { "id": "EG-1031", "date": "2026-10-28", "status": "delivered", "method": "delivery", "items": [ { "id": "pr-creatine", "qty": 1, "opt": null }, { "id": "pr-bars", "qty": 1, "opt": 0 } ], "total": 218 },
+    { "id": "EG-1019", "date": "2026-10-15", "status": "delivered", "method": "pickup", "items": [ { "id": "pr-tee", "qty": 2, "opt": 2 } ], "total": 178 },
+    { "id": "EG-1007", "date": "2026-10-02", "status": "delivered", "method": "delivery", "items": [ { "id": "pr-pre", "qty": 1, "opt": 0 } ], "total": 159 },
+    { "id": "EG-0996", "date": "2026-09-21", "status": "cancelled", "method": "delivery", "items": [ { "id": "pr-belt", "qty": 1, "opt": 1 } ], "total": 199 },
+    { "id": "EG-0981", "date": "2026-09-09", "status": "delivered", "method": "pickup", "items": [ { "id": "pr-gloves", "qty": 1, "opt": 1 } ], "total": 79 },
+    { "id": "EG-0960", "date": "2026-08-30", "status": "cancelled", "method": "pickup", "items": [ { "id": "pr-hoodie", "qty": 1, "opt": 1 } ], "total": 169 },
+    { "id": "EG-0944", "date": "2026-08-18", "status": "delivered", "method": "delivery", "items": [ { "id": "pr-bcaa", "qty": 1, "opt": 0 } ], "total": 129 }
+  ],
+  "bookings": [
+    { "id": "BK-3301", "kind": "class", "ref": "boxing", "coach": "co-omar", "date": "2026-11-15", "time": "19:00", "status": "upcoming" },
+    { "id": "BK-3298", "kind": "service", "ref": "sv-pt", "coach": "co-omar", "date": "2026-11-17", "time": "18:00", "status": "upcoming", "pkg": "5", "used": 2 },
+    { "id": "BK-3290", "kind": "service", "ref": "sv-inbody", "coach": null, "date": "2026-11-20", "time": "10:30", "status": "upcoming" },
+    { "id": "BK-3276", "kind": "class", "ref": "spin", "coach": "co-raj", "date": "2026-11-22", "time": "21:00", "status": "upcoming" },
+    { "id": "BK-3250", "kind": "service", "ref": "sv-pt", "coach": "co-omar", "date": "2026-11-12", "time": "18:00", "status": "completed" },
+    { "id": "BK-3231", "kind": "class", "ref": "hiit", "coach": "co-layla", "date": "2026-11-10", "time": "06:30", "status": "completed" },
+    { "id": "BK-3220", "kind": "service", "ref": "sv-nutrition", "coach": "co-sophie", "date": "2026-11-06", "time": "17:00", "status": "completed" },
+    { "id": "BK-3204", "kind": "class", "ref": "functional", "coach": "co-omar", "date": "2026-11-03", "time": "20:00", "status": "completed" },
+    { "id": "BK-3188", "kind": "service", "ref": "sv-recovery", "coach": "co-raj", "date": "2026-10-30", "time": "19:30", "status": "cancelled" },
+    { "id": "BK-3170", "kind": "class", "ref": "yoga", "coach": "co-sophie", "date": "2026-10-26", "time": "09:00", "status": "cancelled" },
+    { "id": "BK-3155", "kind": "service", "ref": "sv-pt", "coach": "co-omar", "date": "2026-10-22", "time": "18:00", "status": "completed" }
+  ],
+  "invoices": [
+    { "id": "INV-26-1182", "date": "2026-11-12", "title": { "en": "PT pack · 5 sessions", "ar": "باقة مدرب خاص · ٥ جلسات" }, "amount": 750, "method": "visa", "status": "paid" },
+    { "id": "INV-26-1104", "date": "2026-08-10", "title": { "en": "6 Months membership", "ar": "اشتراك ٦ أشهر" }, "amount": 1399, "method": "visa", "status": "paid" },
+    { "id": "INV-26-1090", "date": "2026-08-10", "title": { "en": "Personal locker · 6 months", "ar": "خزانة شخصية · ٦ أشهر" }, "amount": 300, "method": "visa", "status": "paid" },
+    { "id": "INV-26-0921", "date": "2026-05-10", "title": { "en": "3 Months membership", "ar": "اشتراك ٣ أشهر" }, "amount": 799, "method": "cash", "status": "paid" },
+    { "id": "INV-26-0874", "date": "2026-04-22", "title": { "en": "InBody scan", "ar": "فحص InBody" }, "amount": 60, "method": "apple", "status": "paid" },
+    { "id": "INV-26-0802", "date": "2026-04-02", "title": { "en": "Monthly membership", "ar": "اشتراك شهري" }, "amount": 299, "method": "cash", "status": "paid" },
+    { "id": "INV-26-0799", "date": "2026-03-30", "title": { "en": "Recovery massage", "ar": "مساج استشفاء" }, "amount": 220, "method": "visa", "status": "refunded" }
+  ],
+  "points": [
+    { "id": "pt1", "date": "2026-11-15", "type": "earn", "pts": 30, "title": { "en": "Workout logged", "ar": "تسجيل تمرين" } },
+    { "id": "pt2", "date": "2026-11-14", "type": "earn", "pts": 20, "title": { "en": "Gym check-in", "ar": "تسجيل دخول للجيم" } },
+    { "id": "pt3", "date": "2026-11-14", "type": "earn", "pts": 486, "title": { "en": "Shop order EG-1051", "ar": "طلب المتجر EG-1051" } },
+    { "id": "pt4", "date": "2026-11-12", "type": "earn", "pts": 1125, "title": { "en": "PT pack purchase", "ar": "شراء باقة مدرب خاص" } },
+    { "id": "pt5", "date": "2026-11-11", "type": "earn", "pts": 300, "title": { "en": "6-day streak bonus", "ar": "مكافأة سلسلة ٦ أيام" } },
+    { "id": "pt6", "date": "2026-11-09", "type": "spend", "pts": -300, "title": { "en": "Redeemed: Free energy drink", "ar": "استبدال: مشروب طاقة مجاني" } },
+    { "id": "pt7", "date": "2026-11-05", "type": "earn", "pts": 500, "title": { "en": "Friend joined (Saeed)", "ar": "انضمام صديق (سعيد)" } },
+    { "id": "pt8", "date": "2026-10-28", "type": "earn", "pts": 327, "title": { "en": "Shop order EG-1031", "ar": "طلب المتجر EG-1031" } },
+    { "id": "pt9", "date": "2026-10-20", "type": "spend", "pts": -1200, "title": { "en": "Redeemed: InBody scan", "ar": "استبدال: فحص InBody" } },
+    { "id": "pt10", "date": "2026-10-15", "type": "earn", "pts": 267, "title": { "en": "Shop order EG-1019", "ar": "طلب المتجر EG-1019" } },
+    { "id": "pt11", "date": "2026-10-01", "type": "spend", "pts": -900, "title": { "en": "Redeemed: Gold cap shaker", "ar": "استبدال: شيكر بغطاء ذهبي" } },
+    { "id": "pt12", "date": "2026-08-10", "type": "earn", "pts": 2099, "title": { "en": "6 Months membership", "ar": "اشتراك ٦ أشهر" } }
+  ],
+  "vouchers": [
+    { "id": "v1", "code": "EMP-SHAKE-8821", "title": { "en": "Gold cap shaker", "ar": "شيكر بغطاء ذهبي" }, "until": "2026-12-31", "status": "active", "img": "p-shaker" },
+    { "id": "v2", "code": "GOAL25", "title": { "en": "25% off 6-month plan", "ar": "خصم ٢٥٪ على اشتراك ٦ أشهر" }, "until": "2026-12-15", "status": "active", "img": "hero-deadlift" },
+    { "id": "v3", "code": "EMP-50-3310", "title": { "en": "AED 50 shop voucher", "ar": "قسيمة متجر ٥٠ درهم" }, "until": "2027-01-15", "status": "active", "img": "p-whey" },
+    { "id": "v4", "code": "EMP-ENRG-1192", "title": { "en": "Free energy drink", "ar": "مشروب طاقة مجاني" }, "until": "2026-11-09", "status": "used", "img": "p-can-orange" },
+    { "id": "v5", "code": "EMP-INB-7720", "title": { "en": "InBody scan", "ar": "فحص InBody" }, "until": "2026-10-20", "status": "used", "img": "s-inbody" },
+    { "id": "v6", "code": "SUMMER15", "title": { "en": "15% off summer offer", "ar": "خصم ١٥٪ عرض الصيف" }, "until": "2026-08-31", "status": "expired", "img": "c-spin" }
+  ],
+  "measurements": [
+    { "date": "2026-05-01", "weight": 88.1, "fat": 22.4, "muscle": 36.2, "waist": 94 },
+    { "date": "2026-06-01", "weight": 86.9, "fat": 21.5, "muscle": 36.5, "waist": 92 },
+    { "date": "2026-07-01", "weight": 85.6, "fat": 20.6, "muscle": 36.9, "waist": 91 },
+    { "date": "2026-08-01", "weight": 84.8, "fat": 19.8, "muscle": 37.2, "waist": 89 },
+    { "date": "2026-09-01", "weight": 83.9, "fat": 19.1, "muscle": 37.6, "waist": 88 },
+    { "date": "2026-10-01", "weight": 83.0, "fat": 18.4, "muscle": 37.9, "waist": 87 },
+    { "date": "2026-11-01", "weight": 82.4, "fat": 17.8, "muscle": 38.3, "waist": 86 }
+  ],
+  "records": [
+    { "ex": "ex-bench", "unit": "kg", "history": [ { "date": "2026-07-04", "v": 80 }, { "date": "2026-08-01", "v": 85 }, { "date": "2026-08-29", "v": 87.5 }, { "date": "2026-09-26", "v": 90 }, { "date": "2026-10-24", "v": 95 }, { "date": "2026-11-13", "v": 100 } ] },
+    { "ex": "ex-squat", "unit": "kg", "history": [ { "date": "2026-07-04", "v": 100 }, { "date": "2026-08-01", "v": 110 }, { "date": "2026-09-05", "v": 115 }, { "date": "2026-10-10", "v": 125 }, { "date": "2026-11-11", "v": 130 } ] },
+    { "ex": "ex-deadlift", "unit": "kg", "history": [ { "date": "2026-07-06", "v": 130 }, { "date": "2026-08-10", "v": 140 }, { "date": "2026-09-14", "v": 150 }, { "date": "2026-10-19", "v": 160 } ] },
+    { "ex": "ex-goblet", "unit": "kg", "history": [ { "date": "2026-08-01", "v": 30 }, { "date": "2026-08-04", "v": 32.5 }, { "date": "2026-08-10", "v": 35 }, { "date": "2026-08-14", "v": 35 }, { "date": "2026-08-18", "v": 40 } ] },
+    { "ex": "ex-lat", "unit": "kg", "history": [ { "date": "2026-08-01", "v": 60 }, { "date": "2026-09-01", "v": 65 }, { "date": "2026-10-01", "v": 72.5 }, { "date": "2026-11-01", "v": 77.5 } ] },
+    { "ex": "ex-shoulder", "unit": "kg", "history": [ { "date": "2026-08-01", "v": 40 }, { "date": "2026-09-01", "v": 45 }, { "date": "2026-10-01", "v": 50 }, { "date": "2026-11-01", "v": 52.5 } ] }
+  ],
+  "history": [
+    { "id": "w1", "date": "2026-11-15", "program": "pg-coach", "day": "d3", "min": 58, "kcal": 412, "volume": 9850, "sets": 18 },
+    { "id": "w2", "date": "2026-11-13", "program": "pg-coach", "day": "d2", "min": 64, "kcal": 486, "volume": 12400, "sets": 19 },
+    { "id": "w3", "date": "2026-11-12", "program": "pg-coach", "day": "d1", "min": 55, "kcal": 398, "volume": 8760, "sets": 18 },
+    { "id": "w4", "date": "2026-11-11", "program": "pg-fatloss", "day": "d3", "min": 35, "kcal": 380, "volume": 0, "sets": 12 },
+    { "id": "w5", "date": "2026-11-10", "program": "pg-coach", "day": "d4", "min": 61, "kcal": 470, "volume": 11300, "sets": 18 },
+    { "id": "w6", "date": "2026-11-09", "program": "pg-coach", "day": "d3", "min": 57, "kcal": 405, "volume": 9600, "sets": 18 },
+    { "id": "w7", "date": "2026-11-06", "program": "pg-coach", "day": "d2", "min": 62, "kcal": 470, "volume": 12100, "sets": 19 },
+    { "id": "w8", "date": "2026-11-05", "program": "pg-coach", "day": "d1", "min": 54, "kcal": 390, "volume": 8500, "sets": 18 },
+    { "id": "w9", "date": "2026-11-03", "program": "pg-coach", "day": "d4", "min": 60, "kcal": 455, "volume": 11000, "sets": 18 },
+    { "id": "w10", "date": "2026-11-02", "program": "pg-coach", "day": "d3", "min": 56, "kcal": 400, "volume": 9400, "sets": 18 },
+    { "id": "w11", "date": "2026-10-30", "program": "pg-coach", "day": "d2", "min": 63, "kcal": 480, "volume": 11800, "sets": 19 },
+    { "id": "w12", "date": "2026-10-29", "program": "pg-coach", "day": "d1", "min": 52, "kcal": 380, "volume": 8300, "sets": 17 }
+  ],
+  "addresses": [
+    { "id": "ad1", "label": { "en": "Home", "ar": "المنزل" }, "emirate": "Abu Dhabi", "area": { "en": "Mohammed Bin Zayed City, Zone 9", "ar": "مدينة محمد بن زايد، المنطقة ٩" }, "building": "Villa 23, Street 14", "flat": "", "default": true },
+    { "id": "ad2", "label": { "en": "Work", "ar": "العمل" }, "emirate": "Abu Dhabi", "area": { "en": "Al Reem Island, Shams", "ar": "جزيرة الريم، شمس" }, "building": "Sky Tower", "flat": "Office 2104", "default": false }
+  ],
+  "cards": [
+    { "id": "c1", "brand": "visa", "last4": "4821", "exp": "08/28", "name": "KHALID AL HAMMADI", "default": true },
+    { "id": "c2", "brand": "mastercard", "last4": "1907", "exp": "02/27", "name": "KHALID AL HAMMADI", "default": false }
+  ],
+  "chat": [
+    { "id": "m1", "from": "coach", "time": "2026-11-13T19:02:00", "text": { "en": "Great session today Khalid! Bench moved fast at 100 kg 💪", "ar": "حصة ممتازة اليوم يا خالد! البنش كان سريع على ١٠٠ كجم 💪" } },
+    { "id": "m2", "from": "me", "time": "2026-11-13T19:10:00", "text": { "en": "Thanks coach! Shoulder felt fine too.", "ar": "شكراً كوتش! الكتف كان ممتاز كمان." } },
+    { "id": "m3", "from": "coach", "time": "2026-11-13T19:12:00", "text": { "en": "Perfect. Week 4 is in your app — keep rest at 2 min on the big lifts.", "ar": "ممتاز. الأسبوع ٤ موجود في التطبيق — خلّ الراحة دقيقتين على التمارين الأساسية." } },
+    { "id": "m4", "from": "me", "time": "2026-11-14T08:41:00", "text": { "en": "Should I adjust calories now that I'm 82 kg?", "ar": "هل أعدّل السعرات الآن بعد ما صرت ٨٢ كجم؟" } },
+    { "id": "m5", "from": "coach", "time": "2026-11-14T09:05:00", "text": { "en": "Keep 2,650 kcal for 2 more weeks, protein 170 g. We'll review after your InBody on the 20th.", "ar": "خلّك على ٢٦٥٠ سعرة لأسبوعين كمان، بروتين ١٧٠ جم. نراجع بعد فحص InBody يوم ٢٠." } }
+  ],
+  "faqs": [
+    { "q": { "en": "How do I check in at the gym?", "ar": "كيف أسجّل دخولي للجيم؟" }, "a": { "en": "Tap the QR button in the middle of the tab bar and show your member card at the entrance scanner or reception.", "ar": "اضغط زر QR في منتصف الشريط السفلي واعرض بطاقتك على جهاز المسح عند المدخل أو للاستقبال." } },
+    { "q": { "en": "Can I pay for my membership at the gym?", "ar": "هل يمكنني دفع الاشتراك في الجيم؟" }, "a": { "en": "Yes. Choose 'Pay at the gym' at checkout. Your membership stays pending until reception confirms payment (cash or card).", "ar": "نعم. اختر «الدفع في الجيم» عند الدفع. يبقى الاشتراك قيد الانتظار حتى يؤكد الاستقبال الدفع (نقداً أو بالبطاقة)." } },
+    { "q": { "en": "How do rewards tiers work?", "ar": "كيف تعمل مستويات المكافآت؟" }, "a": { "en": "Everyone starts at Bronze for free. Reach Silver, Gold or Platinum with a membership plan or by collecting points.", "ar": "الجميع يبدأ بالبرونزي مجاناً. تصل للفضي أو الذهبي أو البلاتيني باشتراك أو بجمع النقاط." } },
+    { "q": { "en": "How do I freeze my membership?", "ar": "كيف أجمّد اشتراكي؟" }, "a": { "en": "Go to My membership › Freeze, pick the dates and confirm. The freeze days are added to your end date.", "ar": "اذهب إلى اشتراكي › تجميد، اختر الأيام وأكّد. تُضاف أيام التجميد إلى تاريخ الانتهاء." } },
+    { "q": { "en": "What's the cancellation policy for classes?", "ar": "ما سياسة إلغاء الحصص؟" }, "a": { "en": "Cancel up to 2 hours before a class for free. Late cancellations may lose the booking credit.", "ar": "الإلغاء مجاني حتى ساعتين قبل الحصة. الإلغاء المتأخر قد يُفقدك رصيد الحجز." } },
+    { "q": { "en": "Do you have ladies-only hours?", "ar": "هل توجد ساعات خاصة بالسيدات؟" }, "a": { "en": "Yes, daily from 10 AM to 2 PM with female coaches on the floor.", "ar": "نعم، يومياً من ١٠ ص حتى ٢ م مع مدربات في الصالة." } },
+    { "q": { "en": "How does online coaching work?", "ar": "كيف يعمل التدريب أونلاين؟" }, "a": { "en": "Your coach builds your plan in the app, checks in weekly and chats with you. Train at home or any gym.", "ar": "يبني مدربك خطتك في التطبيق ويتابعك أسبوعياً ويتواصل معك بالمحادثة. تدرّب في البيت أو أي جيم." } },
+    { "q": { "en": "How do I learn to use a machine?", "ar": "كيف أتعلم استخدام جهاز؟" }, "a": { "en": "Open Machines, pick a zone and tap the machine — or scan the QR sticker on the machine itself.", "ar": "افتح الأجهزة، اختر القسم واضغط على الجهاز — أو امسح رمز QR الملصق على الجهاز." } },
+    { "q": { "en": "Can I get a refund?", "ar": "هل يمكنني استرداد المبلغ؟" }, "a": { "en": "Memberships can be refunded within 7 days if unused. Shop items can be returned unopened within 14 days.", "ar": "يمكن استرداد الاشتراك خلال ٧ أيام إذا لم يُستخدم. ويمكن إرجاع منتجات المتجر غير المفتوحة خلال ١٤ يوماً." } },
+    { "q": { "en": "Is parking available?", "ar": "هل يوجد مواقف سيارات؟" }, "a": { "en": "Free parking in front of Building C201 and on Street 14.", "ar": "مواقف مجانية أمام مبنى C201 وفي الشارع ١٤." } }
+  ]
+}

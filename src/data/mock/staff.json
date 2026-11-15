@@ -1,0 +1,433 @@
+{
+ "members": [
+  {
+   "id": "EMP-20418",
+   "name": {
+    "en": "Khalid Al Hammadi",
+    "ar": "خالد الحمادي"
+   },
+   "gender": "male",
+   "phone": "52 254 7468",
+   "plan": "pl-half",
+   "tier": "gold",
+   "status": "active",
+   "end": "2027-02-10",
+   "visits": 21,
+   "lastVisit": "2026-11-14",
+   "avatar": "u-avatar"
+  },
+  {
+   "id": "EMP-20455",
+   "name": {
+    "en": "Fatima Al Ketbi",
+    "ar": "فاطمة الكتبي"
+   },
+   "gender": "female",
+   "phone": "54 196 6991",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 17,
+   "lastVisit": "2026-11-15",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20492",
+   "name": {
+    "en": "Saeed Al Mazrouei",
+    "ar": "سعيد المزروعي"
+   },
+   "gender": "male",
+   "phone": "54 319 1614",
+   "plan": "pl-quarter",
+   "tier": "silver",
+   "status": "expiring",
+   "end": "2026-11-19",
+   "visits": 114,
+   "lastVisit": "2026-11-07",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20529",
+   "name": {
+    "en": "Mariam Al Nuaimi",
+    "ar": "مريم النعيمي"
+   },
+   "gender": "female",
+   "phone": "50 346 2486",
+   "plan": "pl-annual",
+   "tier": "platinum",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 111,
+   "lastVisit": "2026-11-01",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20566",
+   "name": {
+    "en": "Ahmed Hassan",
+    "ar": "أحمد حسن"
+   },
+   "gender": "male",
+   "phone": "56 679 3028",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "expired",
+   "end": "2026-11-01",
+   "visits": 18,
+   "lastVisit": "2026-11-10",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20603",
+   "name": {
+    "en": "Yousef Al Shamsi",
+    "ar": "يوسف الشامسي"
+   },
+   "gender": "male",
+   "phone": "54 506 1812",
+   "plan": "pl-vip",
+   "tier": "platinum",
+   "status": "active",
+   "end": "2027-01-04",
+   "visits": 14,
+   "lastVisit": "2026-11-09",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20640",
+   "name": {
+    "en": "Noura Al Dhaheri",
+    "ar": "نورة الظاهري"
+   },
+   "gender": "female",
+   "phone": "56 236 5744",
+   "plan": "pl-half",
+   "tier": "gold",
+   "status": "frozen",
+   "end": "2026-12-30",
+   "visits": 39,
+   "lastVisit": "2026-11-09",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20677",
+   "name": {
+    "en": "Rashid Al Ameri",
+    "ar": "راشد العامري"
+   },
+   "gender": "male",
+   "phone": "50 684 6054",
+   "plan": "pl-quarter",
+   "tier": "silver",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 49,
+   "lastVisit": "2026-11-02",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20714",
+   "name": {
+    "en": "Arjun Nair",
+    "ar": "أرجون ناير"
+   },
+   "gender": "male",
+   "phone": "54 684 4078",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "pending",
+   "end": "2027-05-15",
+   "visits": 27,
+   "lastVisit": "2026-11-09",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20751",
+   "name": {
+    "en": "Hessa Al Mheiri",
+    "ar": "حصة المهيري"
+   },
+   "gender": "female",
+   "phone": "55 164 1976",
+   "plan": "pl-annual",
+   "tier": "platinum",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 55,
+   "lastVisit": "2026-11-08",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20788",
+   "name": {
+    "en": "Omar Farouk",
+    "ar": "عمر فاروق"
+   },
+   "gender": "male",
+   "phone": "55 644 8005",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "expiring",
+   "end": "2026-11-22",
+   "visits": 122,
+   "lastVisit": "2026-11-10",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20825",
+   "name": {
+    "en": "Sara Ibrahim",
+    "ar": "سارة إبراهيم"
+   },
+   "gender": "female",
+   "phone": "53 470 5911",
+   "plan": "pl-online",
+   "tier": "silver",
+   "status": "active",
+   "end": "2027-01-04",
+   "visits": 49,
+   "lastVisit": "2026-11-12",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20862",
+   "name": {
+    "en": "Mohammed Al Kaabi",
+    "ar": "محمد الكعبي"
+   },
+   "gender": "male",
+   "phone": "56 349 2341",
+   "plan": "pl-quarter",
+   "tier": "silver",
+   "status": "expired",
+   "end": "2026-10-20",
+   "visits": 137,
+   "lastVisit": "2026-11-08",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20899",
+   "name": {
+    "en": "Ali Raza",
+    "ar": "علي رضا"
+   },
+   "gender": "male",
+   "phone": "52 846 8353",
+   "plan": "pl-half",
+   "tier": "gold",
+   "status": "active",
+   "end": "2026-12-28",
+   "visits": 21,
+   "lastVisit": "2026-11-02",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20936",
+   "name": {
+    "en": "Aisha Al Suwaidi",
+    "ar": "عائشة السويدي"
+   },
+   "gender": "female",
+   "phone": "54 528 3702",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "active",
+   "end": "2026-12-28",
+   "visits": 41,
+   "lastVisit": "2026-11-15",
+   "avatar": null
+  },
+  {
+   "id": "EMP-20973",
+   "name": {
+    "en": "Hamad Al Falasi",
+    "ar": "حمد الفلاسي"
+   },
+   "gender": "male",
+   "phone": "53 531 1642",
+   "plan": "pl-half",
+   "tier": "gold",
+   "status": "pending",
+   "end": "2026-12-15",
+   "visits": 83,
+   "lastVisit": "2026-11-06",
+   "avatar": null
+  },
+  {
+   "id": "EMP-21010",
+   "name": {
+    "en": "Lina Haddad",
+    "ar": "لينا حداد"
+   },
+   "gender": "female",
+   "phone": "55 458 9137",
+   "plan": "pl-annual",
+   "tier": "platinum",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 119,
+   "lastVisit": "2026-11-02",
+   "avatar": null
+  },
+  {
+   "id": "EMP-21047",
+   "name": {
+    "en": "Tariq Al Junaibi",
+    "ar": "طارق الجنيبي"
+   },
+   "gender": "male",
+   "phone": "56 195 5422",
+   "plan": "pl-quarter",
+   "tier": "silver",
+   "status": "frozen",
+   "end": "2026-12-30",
+   "visits": 19,
+   "lastVisit": "2026-11-01",
+   "avatar": null
+  },
+  {
+   "id": "EMP-21084",
+   "name": {
+    "en": "John Mathew",
+    "ar": "جون ماثيو"
+   },
+   "gender": "male",
+   "phone": "55 818 6072",
+   "plan": "pl-monthly",
+   "tier": "silver",
+   "status": "active",
+   "end": "2027-03-02",
+   "visits": 117,
+   "lastVisit": "2026-11-05",
+   "avatar": null
+  },
+  {
+   "id": "EMP-21121",
+   "name": {
+    "en": "Reem Al Hosani",
+    "ar": "ريم الحوسني"
+   },
+   "gender": "female",
+   "phone": "55 495 6685",
+   "plan": "pl-10",
+   "tier": "bronze",
+   "status": "active",
+   "end": "2027-02-10",
+   "visits": 121,
+   "lastVisit": "2026-11-06",
+   "avatar": null
+  }
+ ],
+ "visits": [
+  {
+   "id": "vs14",
+   "member": "EMP-20492",
+   "time": "18:51",
+   "result": "allowed"
+  },
+  {
+   "id": "vs13",
+   "member": "EMP-21121",
+   "time": "18:22",
+   "result": "allowed"
+  },
+  {
+   "id": "vs12",
+   "member": "EMP-21010",
+   "time": "18:05",
+   "result": "allowed"
+  },
+  {
+   "id": "vs11",
+   "member": "EMP-20899",
+   "time": "17:48",
+   "result": "allowed"
+  },
+  {
+   "id": "vs10",
+   "member": "EMP-20788",
+   "time": "16:12",
+   "result": "allowed"
+  },
+  {
+   "id": "vs9",
+   "member": "EMP-20677",
+   "time": "14:05",
+   "result": "allowed"
+  },
+  {
+   "id": "vs8",
+   "member": "EMP-20566",
+   "time": "12:30",
+   "result": "denied"
+  },
+  {
+   "id": "vs7",
+   "member": "EMP-20455",
+   "time": "11:47",
+   "result": "allowed"
+  },
+  {
+   "id": "vs6",
+   "member": "EMP-21084",
+   "time": "10:20",
+   "result": "allowed"
+  },
+  {
+   "id": "vs5",
+   "member": "EMP-20973",
+   "time": "09:02",
+   "result": "allowed"
+  },
+  {
+   "id": "vs4",
+   "member": "EMP-20862",
+   "time": "08:15",
+   "result": "denied"
+  },
+  {
+   "id": "vs3",
+   "member": "EMP-20751",
+   "time": "07:31",
+   "result": "allowed"
+  },
+  {
+   "id": "vs2",
+   "member": "EMP-20640",
+   "time": "07:05",
+   "result": "allowed"
+  },
+  {
+   "id": "vs1",
+   "member": "EMP-20529",
+   "time": "06:40",
+   "result": "allowed"
+  },
+  {
+   "id": "vs0",
+   "member": "EMP-20418",
+   "time": "06:12",
+   "result": "allowed"
+  }
+ ],
+ "staff": {
+  "id": "ST-007",
+  "name": {
+   "en": "Hassan Ali",
+   "ar": "حسن علي"
+  },
+  "role": {
+   "en": "Front desk · Morning shift",
+   "ar": "الاستقبال · الفترة الصباحية"
+  },
+  "shift": "06:00 – 14:00"
+ },
+ "today": {
+  "sales": 3260,
+  "newMembers": 4,
+  "checkins": 118
+ }
+}

@@ -1,0 +1,62 @@
+{
+  "services": [
+    { "id": "sv-pt", "img": "s-pt", "icon": "barbell-outline", "kind": "coach", "name": { "en": "Personal Training", "ar": "التدريب الشخصي" }, "short": { "en": "1-on-1 sessions with a certified coach", "ar": "جلسات فردية مع مدرب معتمد" }, "duration": 60,
+      "desc": { "en": "Train one-on-one with an Empire coach who plans every set for your goal — fat loss, muscle, strength or rehab. Includes form correction, progress tracking in the app and a plan for the days you train alone.", "ar": "تدرّب فردياً مع مدرب إمباير يخطط لكل مجموعة حسب هدفك — خسارة دهون، بناء عضل، قوة أو تأهيل. يشمل تصحيح الأداء ومتابعة التقدم في التطبيق وخطة للأيام التي تتدرب فيها وحدك." },
+      "packages": [ { "id": "1", "sessions": 1, "price": 180 }, { "id": "5", "sessions": 5, "price": 750 }, { "id": "10", "sessions": 10, "price": 1350 } ] },
+    { "id": "sv-nutrition", "img": "s-nutrition", "icon": "nutrition-outline", "kind": "coach", "name": { "en": "Nutrition Consultation", "ar": "استشارة تغذية" }, "short": { "en": "Personal meal plan & macros", "ar": "خطة وجبات وماكروز مخصصة" }, "duration": 45,
+      "desc": { "en": "A sit-down with our nutrition coach: body analysis, calorie & macro targets, and a weekly meal plan built from foods you actually eat in the UAE.", "ar": "جلسة مع أخصائية التغذية: تحليل الجسم وأهداف السعرات والماكروز وخطة وجبات أسبوعية من أكلات تأكلها فعلاً في الإمارات." },
+      "packages": [ { "id": "1", "sessions": 1, "price": 250 }, { "id": "3", "sessions": 3, "price": 600 } ] },
+    { "id": "sv-inbody", "img": "s-inbody", "icon": "body-outline", "kind": "slot", "name": { "en": "InBody Scan", "ar": "فحص InBody" }, "short": { "en": "Body fat, muscle & water in 60 sec", "ar": "دهون وعضل وماء الجسم في ٦٠ ثانية" }, "duration": 15,
+      "desc": { "en": "Medical-grade body composition analysis. Results sync to your profile so you can track muscle and fat over time.", "ar": "تحليل تركيب الجسم بدقة طبية. النتائج تُحفظ في ملفك لتتابع العضل والدهون مع الوقت." },
+      "packages": [ { "id": "1", "sessions": 1, "price": 60 }, { "id": "4", "sessions": 4, "price": 200 } ] },
+    { "id": "sv-recovery", "img": "s-recovery", "icon": "leaf-outline", "kind": "coach", "name": { "en": "Recovery & Sports Massage", "ar": "الاستشفاء والمساج الرياضي" }, "short": { "en": "Deep tissue & mobility work", "ar": "مساج عميق وتحسين المرونة" }, "duration": 50,
+      "desc": { "en": "Sports massage and assisted stretching to speed up recovery and keep you training pain-free.", "ar": "مساج رياضي وإطالة بمساعدة المختص لتسريع الاستشفاء والتدرب بدون ألم." },
+      "packages": [ { "id": "1", "sessions": 1, "price": 220 }, { "id": "4", "sessions": 4, "price": 780 } ] },
+    { "id": "sv-classes", "img": "c-hiit", "icon": "people-outline", "kind": "classes", "name": { "en": "Group Classes", "ar": "الحصص الجماعية" }, "short": { "en": "HIIT, boxing, spin, yoga & more", "ar": "HIIT وملاكمة وسبين ويوغا والمزيد" }, "duration": 45,
+      "desc": { "en": "Coach-led classes all week. Included in every membership; day-pass holders can book for AED 35.", "ar": "حصص بقيادة مدربين طوال الأسبوع. مشمولة في كل اشتراك؛ وحاملو تذكرة اليوم يحجزون بـ ٣٥ درهم." },
+      "packages": [ { "id": "1", "sessions": 1, "price": 35 } ] },
+    { "id": "sv-online", "img": "s-online", "icon": "phone-portrait-outline", "kind": "plan", "name": { "en": "Online Coaching", "ar": "التدريب أونلاين" }, "short": { "en": "Train anywhere with an Empire coach", "ar": "تدرب من أي مكان مع مدرب إمباير" }, "duration": 0,
+      "desc": { "en": "Not near Mussafah? Get a personal program, weekly check-ins and chat with your coach — all inside this app.", "ar": "لست قريباً من مصفح؟ احصل على برنامج شخصي ومتابعة أسبوعية ومحادثة مع مدربك — كلها داخل التطبيق." },
+      "packages": [] }
+  ],
+  "coaches": [
+    { "id": "co-omar", "img": "t-omar", "name": { "en": "Omar Haddad", "ar": "عمر حداد" }, "role": { "en": "Head Coach · Strength", "ar": "المدرب الرئيسي · القوة" }, "rating": 4.9, "reviews": 128, "years": 9, "clients": 340,
+      "tags": [ { "en": "Strength", "ar": "القوة" }, { "en": "Hypertrophy", "ar": "بناء العضل" }, { "en": "Powerlifting", "ar": "رفع القوة" } ],
+      "certs": [ { "en": "NASM Certified Personal Trainer", "ar": "مدرب شخصي معتمد NASM" }, { "en": "Precision Nutrition L1", "ar": "Precision Nutrition المستوى ١" } ],
+      "bio": { "en": "Omar has coached in Abu Dhabi for nine years, helping members hit their first 100 kg bench and their best shape ever. Expect clear cues, smart progression and zero ego.", "ar": "يدرّب عمر في أبوظبي منذ تسع سنوات، وساعد الأعضاء على رفع أول ١٠٠ كجم بنش والوصول لأفضل شكل. توقّع تعليمات واضحة وتدرّجاً ذكياً وبدون غرور." } },
+    { "id": "co-layla", "img": "t-layla", "name": { "en": "Layla Al Mansoori", "ar": "ليلى المنصوري" }, "role": { "en": "Coach · Ladies & Fat Loss", "ar": "مدربة · السيدات وخسارة الدهون" }, "rating": 4.9, "reviews": 96, "years": 6, "clients": 210,
+      "tags": [ { "en": "Fat loss", "ar": "خسارة الدهون" }, { "en": "Ladies training", "ar": "تدريب السيدات" }, { "en": "HIIT", "ar": "HIIT" } ],
+      "certs": [ { "en": "ACE Certified Personal Trainer", "ar": "مدربة شخصية معتمدة ACE" }, { "en": "Pre & post-natal fitness", "ar": "لياقة ما قبل وبعد الولادة" } ],
+      "bio": { "en": "Layla leads our ladies hours and HIIT classes. Her programs are built around real life — busy schedules, family and Ramadan included.", "ar": "تقود ليلى ساعات السيدات وحصص HIIT. برامجها مبنية حول الحياة الواقعية — الجدول المزدحم والعائلة ورمضان أيضاً." } },
+    { "id": "co-raj", "img": "t-raj", "name": { "en": "Raj Menon", "ar": "راج مينون" }, "role": { "en": "Coach · Bodybuilding & Rehab", "ar": "مدرب · كمال الأجسام والتأهيل" }, "rating": 4.8, "reviews": 74, "years": 12, "clients": 400,
+      "tags": [ { "en": "Bodybuilding", "ar": "كمال الأجسام" }, { "en": "Injury rehab", "ar": "التأهيل من الإصابات" }, { "en": "Mobility", "ar": "المرونة" } ],
+      "certs": [ { "en": "ISSA Bodybuilding Specialist", "ar": "أخصائي كمال أجسام ISSA" }, { "en": "Corrective Exercise Specialist", "ar": "أخصائي التمارين التصحيحية" } ],
+      "bio": { "en": "Former competitor turned coach, Raj specialises in safe muscle building and getting members back after back, knee and shoulder injuries.", "ar": "متسابق سابق أصبح مدرباً، يتخصص راج في بناء العضل بأمان وإعادة الأعضاء بعد إصابات الظهر والركبة والكتف." } },
+    { "id": "co-sophie", "img": "t-sophie", "name": { "en": "Sophie Laurent", "ar": "صوفي لوران" }, "role": { "en": "Nutrition & Online Coach", "ar": "أخصائية تغذية ومدربة أونلاين" }, "rating": 4.9, "reviews": 112, "years": 8, "clients": 520,
+      "tags": [ { "en": "Nutrition", "ar": "التغذية" }, { "en": "Online coaching", "ar": "التدريب أونلاين" }, { "en": "Yoga", "ar": "يوغا" } ],
+      "certs": [ { "en": "MSc Sports Nutrition", "ar": "ماجستير التغذية الرياضية" }, { "en": "RYT-200 Yoga Teacher", "ar": "مدربة يوغا معتمدة RYT-200" } ],
+      "bio": { "en": "Sophie builds meal plans people can stick to and runs our online coaching team. She also teaches Sunday morning yoga.", "ar": "تصمم صوفي خطط وجبات يمكن الالتزام بها وتقود فريق التدريب أونلاين، وتدرّس أيضاً اليوغا صباح الأحد." } }
+  ],
+  "classTypes": [
+    { "id": "hiit", "img": "c-hiit", "name": { "en": "HIIT Burn", "ar": "HIIT للحرق" }, "coach": "co-layla", "duration": 45, "intensity": 3, "kcal": 520, "capacity": 18,
+      "desc": { "en": "Kettlebells, burpees and intervals. High intensity, big burn.", "ar": "كيتل بيل وبيربي وتمارين متقطعة. شدة عالية وحرق كبير." } },
+    { "id": "boxing", "img": "c-boxing", "name": { "en": "Boxing Fit", "ar": "ملاكمة لياقة" }, "coach": "co-omar", "duration": 50, "intensity": 3, "kcal": 600, "capacity": 14,
+      "desc": { "en": "Pad work, bag rounds and footwork drills. Gloves provided.", "ar": "تمارين الوسائد والكيس وحركة القدمين. القفازات متوفرة." } },
+    { "id": "spin", "img": "c-spin", "name": { "en": "Spin Rush", "ar": "سبين رَش" }, "coach": "co-raj", "duration": 45, "intensity": 2, "kcal": 480, "capacity": 20,
+      "desc": { "en": "Rhythm-based indoor cycling with climbs and sprints.", "ar": "دراجات داخلية على الإيقاع مع صعود وسرعات." } },
+    { "id": "yoga", "img": "c-yoga", "name": { "en": "Yoga Flow", "ar": "يوغا فلو" }, "coach": "co-sophie", "duration": 60, "intensity": 1, "kcal": 220, "capacity": 16,
+      "desc": { "en": "Mobility, breath and balance to recover from heavy training.", "ar": "مرونة وتنفس وتوازن للاستشفاء من التدريب الثقيل." } },
+    { "id": "functional", "img": "c-functional", "name": { "en": "Functional Strength", "ar": "القوة الوظيفية" }, "coach": "co-omar", "duration": 50, "intensity": 2, "kcal": 450, "capacity": 12,
+      "desc": { "en": "Battle ropes, sleds and compound lifts in small groups.", "ar": "حبال القتال والزلاجات والتمارين المركبة في مجموعات صغيرة." } }
+  ],
+  "schedule": [
+    { "type": "hiit", "time": "06:30", "days": [0,2,4] },
+    { "type": "functional", "time": "07:30", "days": [1,3,5] },
+    { "type": "yoga", "time": "09:00", "days": [0,5] },
+    { "type": "hiit", "time": "11:00", "days": [1,3], "ladies": true },
+    { "type": "spin", "time": "18:00", "days": [0,1,2,3,4] },
+    { "type": "boxing", "time": "19:00", "days": [0,2,4,6] },
+    { "type": "functional", "time": "20:00", "days": [1,3,6] },
+    { "type": "spin", "time": "21:00", "days": [5,6] }
+  ]
+}

@@ -1,0 +1,18 @@
+# Decisions & interpretations
+
+1. **Client & brand.** Empire Gym, Abu Dhabi. Logo: silver "E" with a barbell inside a gold ring on black. Brand colours taken from the logo and Instagram posts: black `#0B0B0C`, gold `#D4A22B`, Empire yellow `#FFC20E`, silver `#C7CBD1`. The reference app (yellow fitness UI) was used for UX only: light surfaces, rounded cards, a yellow primary, dark secondary buttons, PR charts.
+2. **Address & contact** read from the Instagram posts: Mussafah Shabiya 11 (ME-11), Building C201, Abu Dhabi; phone 050 876 2453. Hours (6am–12am, Fri 2pm–12am) are an assumption to confirm.
+3. **Two APKs from one codebase.** "Taking subscriptions from people who come in" needs a front-desk tool, so there is a **Staff app** (walk-in signup, check-in, renew/freeze, counter sales) besides the **Member app**. The same code builds both (`APP_VARIANT=member|staff`).
+4. **Pay at the gym.** Online checkout includes a "Pay at the gym" option: the membership is created as *Pending*, the member shows the QR at reception, and staff activate it in the Staff app.
+5. **Tiers, with or without a subscription.** Bronze is free for every registered user (guests and online clients included). Silver, Gold and Platinum come either with a membership plan (Monthly → Silver, 6-month → Gold, Annual/VIP → Platinum) or by earning points (2,000 / 6,000 / 15,000). Points: 1 pt per AED 1 spent, 20 pts per check-in, 30 pts per logged workout.
+6. **Prices** are realistic placeholders for Abu Dhabi (AED, VAT 5%): Monthly 299, 3 months 799, 6 months 1,399, Annual 2,399, VIP Annual 3,999, Day pass 40, Week pass 120; Online coaching 349/month. To be confirmed by the gym.
+7. **Products:** the energy drinks seen on Instagram (C4 Performance, C5 Turbo, ABE Performance) plus typical supplements and Empire apparel. Images are generic AI-generated product shots (no third-party logos).
+8. **Machine videos** play YouTube how-to videos in-app. The gym can later replace them with its own videos; each machine also has a printed QR code (E05) that opens its page.
+9. **Calories** use Mifflin-St Jeor BMR × activity factor, ±500 kcal for fat loss / muscle gain; macros 30/40/30.
+10. **Guest mode:** people outside the gym can browse plans, shop, offers, machines and training content without an account. Member-only actions show a sign-in sheet (G01).
+11. **Login** accepts any valid-looking input; OTP is any 4 digits (hint 1234). Staff app: any staff ID + 4-digit PIN.
+12. **Web admin panel** (manage plans, products, offers, members, reports) is a separate deliverable, not part of the APKs.
+13. **Build environment.** The cloud workspace cannot reach Google's Android SDK/Maven servers, so APKs are built on GitHub Actions on the `empire-gym-app` branch of `cyberxpertuae/cyberxpert` (orphan branch, Vercel deploys disabled on it; `main` is untouched) and published as GitHub releases.
+14. **Expo SDK 54** (React Native 0.81) is used rather than the newest SDK 58, for stability with the libraries used.
+15. **Figma:** the file contains the design system, natively designed key screens in EN + AR, and a full board with every screen of both apps in both languages, captured from the built UI so it matches the APK exactly.
+16. **Default language** is Arabic; it can be changed at first launch, on Login/Welcome, and in Settings, and switches instantly.
