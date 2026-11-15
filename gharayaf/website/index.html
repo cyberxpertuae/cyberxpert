@@ -47,8 +47,8 @@ const CONFIG = {
   brand:   { en: "Al Gharayaf Perfumes", ar: "الغرياف للعطور" },  // اسم المحل
 
   // ---- التواصل ----
-  whatsapp:     "971581777245",              // رقم الواتساب (بدون + وبدون مسافات)
-  whatsappFloat:"971582499741",              // رقم زر الواتساب الأخضر العائم فقط (0582499741)
+  whatsapp:     "971582499741",              // رقم الواتساب لكل الأزرار والطلبات (بدون + وبدون مسافات)
+  whatsappDisplay: "+971 58 249 9741",       // رقم الواتساب كما يظهر في الموقع
   phone:        "+971581777245",             // رقم الاتصال
   phoneDisplay: "+971 58 177 7245",          // الرقم كما يظهر في الموقع
   instagram:    "https://www.instagram.com/algharayaf.perfume",  // انستغرام
@@ -565,7 +565,7 @@ body.menu-open{overflow:hidden}
     <a href="#contact" data-i18n="nav.visit">Visit Us</a>
   </nav>
   <div class="menu-foot">
-    <a class="js-wa" data-msg="general" href="#"><svg class="ico"><use href="#i-wa"/></svg><span class="js-phone"></span></a>
+    <a class="js-wa" data-msg="general" href="#"><svg class="ico"><use href="#i-wa"/></svg><span class="js-waphone"></span></a>
     <span><svg class="ico" style="vertical-align:-4px"><use href="#i-pin"/></svg> <span class="js-address"></span></span>
   </div>
 </div>
@@ -735,7 +735,7 @@ body.menu-open{overflow:hidden}
       <span class="eyebrow rv" data-i18n="ct.eyebrow">Visit &amp; Contact</span>
       <h2 class="h2 rv" style="text-align:start"><span data-i18n="ct.t1">We're Here</span><span data-i18n="ct.t2">For You</span></h2>
       <div class="info-list rv">
-        <div class="info"><span class="circ"><svg class="ico"><use href="#i-wa"/></svg></span><div><h4 data-i18n="ct.wa">WhatsApp &amp; Call</h4><a class="js-wa js-phone" data-msg="general" href="#"></a></div></div>
+        <div class="info"><span class="circ"><svg class="ico"><use href="#i-wa"/></svg></span><div><h4 data-i18n="ct.wa">WhatsApp</h4><a class="js-wa js-waphone" data-msg="general" href="#"></a></div></div>
         <div class="info"><span class="circ"><svg class="ico"><use href="#i-pin"/></svg></span><div><h4 data-i18n="ct.addr">Boutique</h4><a class="js-map js-address" href="#" target="_blank" rel="noopener"></a></div></div>
         <div class="info"><span class="circ"><svg class="ico"><use href="#i-clock"/></svg></span><div style="flex:1"><h4 data-i18n="ct.hours">Opening hours</h4><div id="hours" style="display:grid; gap:6px; margin-top:6px"></div></div></div>
       </div>
@@ -775,7 +775,7 @@ body.menu-open{overflow:hidden}
       <div>
         <h4 data-i18n="ft.contact">Contact</h4>
         <ul>
-          <li><a class="js-wa" data-msg="general" href="#"><svg class="ico"><use href="#i-wa"/></svg><span class="js-phone"></span></a></li>
+          <li><a class="js-wa" data-msg="general" href="#"><svg class="ico"><use href="#i-wa"/></svg><span class="js-waphone"></span></a></li>
           <li><a class="js-tel" href="#"><svg class="ico"><use href="#i-phone"/></svg><span class="js-phone"></span></a></li>
           <li><a class="js-map" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg><span class="js-address"></span></a></li>
         </ul>
@@ -824,7 +824,7 @@ const I18N = { ar: {
   "how.4t":"استلم طلبك", "how.4p":"يوصلك خلال 3 أيام عمل في أي مكان بالإمارات.",
   "band.eyebrow":"العالية · عجمان", "band.t1":"شمّه", "band.t2":"قبل ما تختار", "band.sub":"فرعنا الوحيد في العالية، عجمان يرحب فيك تجرّب كل العطور بنفسك.", "band.cta":"الاتجاهات للمحل",
   "faq.eyebrow":"معلومات تهمك", "faq.title":"أسئلة شائعة",
-  "ct.eyebrow":"زورونا وتواصلوا معنا", "ct.t1":"حاضرين", "ct.t2":"لخدمتكم", "ct.wa":"واتساب واتصال", "ct.addr":"المحل", "ct.hours":"الدوام", "ct.open":"افتح في قوقل ماب",
+  "ct.eyebrow":"زورونا وتواصلوا معنا", "ct.t1":"حاضرين", "ct.t2":"لخدمتكم", "ct.wa":"واتساب", "ct.addr":"المحل", "ct.hours":"الدوام", "ct.open":"افتح في قوقل ماب",
   "form.title":"أرسل لنا رسالة", "form.sub":"رسالتك تفتح في الواتساب جاهزة للإرسال.", "form.name":"الاسم", "form.phone":"رقم الهاتف", "form.emirate":"الإمارة", "form.msg":"رسالتك", "form.send":"أرسل عبر الواتساب",
   "ft.tag":"أصالة عربية وفرنسية تُصنع بإتقان — صُنع في الإمارات.", "ft.shop":"تسوّق", "ft.contact":"تواصل", "ft.rights":"جميع الحقوق محفوظة", "ft.policy":"الأسعار شاملة الضريبة · لا يوجد استرجاع — جرّب في المحل أولاً",
   "fcta":"تسوّق الآن",
@@ -918,12 +918,13 @@ function renderStatic(){
     el.innerHTML = LANG==="ar" ? (I18N.ar[el.dataset.i18n] ?? el.dataset.en) : el.dataset.en;
   });
   $$(".js-phone").forEach(e=>e.textContent=CONFIG.phoneDisplay);
+  $$(".js-waphone").forEach(e=>e.textContent=CONFIG.whatsappDisplay);
   $$(".js-address").forEach(e=>e.textContent=CONFIG.address[LANG]);
   $$(".js-brand").forEach(e=>e.textContent=CONFIG.brand[LANG]);
   $$(".js-map").forEach(e=>e.href=CONFIG.mapLink);
   $$(".js-tel").forEach(e=>e.href="tel:"+CONFIG.phone);
   $$(".js-wa").forEach(e=>{e.href=wa(t("msg.general")); e.target="_blank"; e.rel="noopener"});
-  const wf=$("#waFloat"); wf.href=`https://wa.me/${CONFIG.whatsappFloat||CONFIG.whatsapp}?text=${encodeURIComponent(t("msg.general"))}`; wf.target="_blank"; wf.rel="noopener";
+  const wf=$("#waFloat"); wf.href=wa(t("msg.general")); wf.target="_blank"; wf.rel="noopener";
   $("#yr").textContent=new Date().getFullYear();
   // ticker (duplicated for seamless loop)
   const items=[1,2,3,4,5,6].map(i=>`<span>${esc(t("ticker."+i))}<svg><use href="#i-star4"/></svg></span>`).join("");
