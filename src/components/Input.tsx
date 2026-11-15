@@ -13,15 +13,16 @@ export function Input({ label, error, prefix, icon, secure, hint, multiline, onP
   const [focus, setFocus] = useState(false);
   const [hidden, setHidden] = useState(true);
   const borderColor = error ? colors.danger : focus ? colors.yellow : colors.border;
+  const isPhone = rest.keyboardType === 'phone-pad';
   const field = (
     <Row
       gap={10}
       align={multiline ? 'flex-start' : 'center'}
-      style={{ minHeight: multiline ? 110 : 54, borderRadius: radius.lg, backgroundColor: colors.surface, borderWidth: focus || error ? 1.5 : 1, borderColor, paddingHorizontal: 16, paddingVertical: multiline ? 12 : 0 }}
+      style={{ flexDirection: isPhone ? 'row' : row, minHeight: multiline ? 110 : 54, borderRadius: radius.lg, backgroundColor: colors.surface, borderWidth: focus || error ? 1.5 : 1, borderColor, paddingHorizontal: 16, paddingVertical: multiline ? 12 : 0 }}
     >
       {icon ? <Icon name={icon} size={20} color={colors.textMuted} /> : null}
       {prefix ? (
-        <View style={{ flexDirection: row, alignItems: 'center', gap: 8 }}>
+        <View style={{ flexDirection: isPhone ? 'row' : row, alignItems: 'center', gap: 8 }}>
           <T v="bodyStrong">{prefix}</T>
           <View style={{ width: 1, height: 22, backgroundColor: colors.border }} />
         </View>
@@ -35,7 +36,7 @@ export function Input({ label, error, prefix, icon, secure, hint, multiline, onP
         placeholderTextColor={colors.textSubtle}
         onFocus={(e) => { setFocus(true); rest.onFocus?.(e); }}
         onBlur={(e) => { setFocus(false); rest.onBlur?.(e); }}
-        style={[{ flex: 1, fontFamily: fonts.medium, fontSize: 15, color: colors.text, textAlign: prefix && rest.keyboardType === 'phone-pad' ? 'left' : align, writingDirection: isRTL ? 'rtl' : 'ltr', paddingVertical: multiline ? 0 : 12, textAlignVertical: multiline ? 'top' : 'center', minHeight: multiline ? 86 : undefined }, style]}
+        style={[{ flex: 1, fontFamily: fonts.medium, fontSize: 15, color: colors.text, textAlign: isPhone ? 'left' : align, writingDirection: isPhone ? 'ltr' : isRTL ? 'rtl' : 'ltr', paddingVertical: multiline ? 0 : 12, textAlignVertical: multiline ? 'top' : 'center', minHeight: multiline ? 86 : undefined }, style]}
       />
       {rightText ? <T v="captionStrong" color={colors.textMuted}>{rightText}</T> : null}
       {secure ? (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import { useI18n } from '../../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Img, Button, ChipRow, Sheet, Input, KV, Divider, QtyStepper, Segmented } from '../../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Img, Button, ChipRow, Sheet, Input, KV, Divider, QtyStepper, Segmented, Wrap } from '../../../src/components';
 import { colors, radius } from '../../../src/theme';
 import { useApp } from '../../../src/store/app';
 import { images } from '../../../src/data/images';
@@ -38,14 +38,14 @@ export default function Pos() {
         </Row>
       </Pressable>
       <ChipRow items={[{ key: 'all', label: t('common.all') }, ...catalog.productCategories.map((c) => ({ key: c.id, label: tr(c.name) }))]} value={cat} onChange={setCat} />
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10 }}>
+      <Wrap style={{ gap: 10 }}>
         {products.map((p) => (
           <Pressable testID={`pos-p-${p.id}`} key={p.id} onPress={() => add(p.id)} style={{ width: '31%', backgroundColor: colors.surface, borderRadius: radius.lg, overflow: 'hidden' }}>
             <Img src={images[p.img]} style={{ height: 80, width: '100%' }} />
             <Col style={{ padding: 8 }}><T v="micro" numberOfLines={2} style={{ minHeight: 34 }}>{tr(p.name)}</T><T v="captionStrong">{money(p.price)}</T></Col>
           </Pressable>
         ))}
-      </View>
+      </Wrap>
       <Card>
         {!cart.length ? <T v="caption" center color={colors.textSubtle}>{t('staff.cartEmpty')}</T> : cart.map((c, i) => (
           <Row key={c.id} gap={10} style={{ paddingVertical: 6 }}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { useI18n } from '../../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Button, SectionHeader, StatusBadge, TierBadge, Skeleton, useToast, IconName } from '../../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Button, SectionHeader, StatusBadge, TierBadge, Skeleton, useToast, IconName, Wrap } from '../../../src/components';
 import { colors, radius } from '../../../src/theme';
 import { useApp } from '../../../src/store/app';
 import { staffService } from '../../../src/services/staffService';
@@ -56,14 +56,14 @@ export default function Dashboard() {
         </Row>
       )}
       <SectionHeader title={t('staff.quick')} />
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10 }}>
+      <Wrap style={{ gap: 10 }}>
         {actions.map((a, k) => (
           <Pressable testID={`act-${k}`} key={k} onPress={a.onPress} style={{ width: '48%', flexGrow: 1, backgroundColor: a.dark ? colors.yellow : colors.surface, borderRadius: radius.lg, padding: 16, gap: 10 }}>
             <View style={{ width: 42, height: 42, borderRadius: 12, backgroundColor: a.dark ? colors.black : colors.yellowSoft, alignItems: 'center', justifyContent: 'center' }}><Icon name={a.icon} color={a.dark ? colors.yellow : colors.black} /></View>
             <T v="bodyStrong">{a.label}</T>
           </Pressable>
         ))}
-      </View>
+      </Wrap>
       <SectionHeader title={`${t('staff.pendingPay')} (${pending.length})`} />
       <Card style={{ paddingVertical: 4 }}>{pending.map(row)}</Card>
       <SectionHeader title={`${t('staff.expiring')} (${expiring.length})`} action={t('common.seeAll')} onAction={() => router.push('/staff/(tabs)/members')} />

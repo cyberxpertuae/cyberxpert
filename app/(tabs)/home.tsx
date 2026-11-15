@@ -3,7 +3,7 @@ import { Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, IconButton, Card, Img, TierBadge, SectionHeader, HList, Ring, Button, Pill, Skeleton, IconName, StatusBadge } from '../../src/components';
+import { Screen, T, Row, Col, Icon, IconButton, Card, Img, TierBadge, SectionHeader, HList, Ring, Button, Pill, Skeleton, IconName, StatusBadge, Wrap } from '../../src/components';
 import { colors, radius, shadow, spacing } from '../../src/theme';
 import { useApp, TODAY } from '../../src/store/app';
 import { images } from '../../src/data/images';
@@ -125,7 +125,7 @@ export default function Home() {
       )}
 
       {/* Quick actions */}
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', rowGap: 14, backgroundColor: colors.surface, borderRadius: radius.xl, paddingVertical: 16 }}>
+      <Wrap style={{ rowGap: 14, backgroundColor: colors.surface, borderRadius: radius.xl, paddingVertical: 16 }}>
         {quick.map((q) => (
           <Pressable testID={`quick-${q.to.slice(1)}`} key={q.to} onPress={() => router.push(q.to as any)} style={{ width: '25%', alignItems: 'center', gap: 6 }}>
             <View style={{ width: 50, height: 50, borderRadius: 16, backgroundColor: colors.yellowSoft, alignItems: 'center', justifyContent: 'center' }}>
@@ -134,7 +134,7 @@ export default function Home() {
             <T v="micro" center numberOfLines={1}>{q.label}</T>
           </Pressable>
         ))}
-      </View>
+      </Wrap>
 
       {/* Today's workout + calories */}
       <Row gap={12} align="stretch">

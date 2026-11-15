@@ -15,3 +15,12 @@ export function Col({ gap = 0, style, ...rest }: ViewProps & { gap?: number }) {
 }
 
 export const Spacer = ({ h = 0, w = 0, flex }: { h?: number; w?: number; flex?: boolean }) => <View style={flex ? { flex: 1 } : { height: h, width: w }} />;
+
+/** Wrapping grid that starts from the right in Arabic. */
+export function Wrap({ gap = 0, style, ...rest }: ViewProps & { gap?: number }) {
+  const { row } = useI18n();
+  return <View {...rest} style={[{ flexDirection: row, flexWrap: 'wrap', gap }, style]} />;
+}
+
+/** Keep phone numbers / codes left-to-right inside Arabic text. */
+export const ltr = (s: string) => `⁦${s}⁩`;

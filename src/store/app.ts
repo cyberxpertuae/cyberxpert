@@ -30,6 +30,8 @@ export type SessionSet = { kg: string; reps: string; done: boolean };
 export type ActiveSession = { programId: string | null; dayId: string | null; name: string; exercises: { id: string; sets: SessionSet[] }[]; startedAt: number } | null;
 
 const today = '2026-11-15';
+/** Test harness hook (web screenshots only): window.__EMPIRE_DEMO = 'member' | 'guest'. Never set in the APK. */
+const DEMO: string | undefined = typeof window !== 'undefined' ? (window as any).__EMPIRE_DEMO : undefined;
 export const TODAY = today;
 
 const initialDiary: Record<Meal, DiaryEntry[]> = {
@@ -83,10 +85,10 @@ type State = {
 };
 
 export const useApp = create<State>((set) => ({
-  user: null,
-  guest: false,
+  user: DEMO === 'member' ? member.user : null,
+  guest: DEMO === 'guest',
   onboarded: false,
-  staffSignedIn: false,
+  staffSignedIn: !!DEMO,
   guestGate: false,
   membership: member.membership as Membership,
   notifications: member.notifications,
@@ -112,10 +114,10 @@ export const useApp = create<State>((set) => ({
     { id: 'cw1', name: 'Arms & Abs Finisher', day: 'Fri', ex: [ { id: 'ex-curl', sets: 3, reps: '12' }, { id: 'ex-pushdown', sets: 3, reps: '12' }, { id: 'ex-plank', sets: 3, reps: '45 s' } ] },
     { id: 'cw2', name: 'Quick Cardio 30', day: 'Sun', ex: [ { id: 'ex-treadmill', sets: 1, reps: '20 min' }, { id: 'ex-rower', sets: 1, reps: '2 km' } ] },
   ],
-  session: null,
-  lastSession: null,
-  checkout: { planId: null, start: today, addons: [], promo: null, promoPct: 0, usePoints: false, method: null },
-  booking: { serviceId: null, pkg: null, coachId: null, classId: null, date: null, time: null },
+  session: DEMO ? { programId: 'pg-coach', dayId: 'd1', name: 'Upper A · Push focus', startedAt: Date.now() - 754000, exercises: [ { id: 'ex-bench', sets: [ { kg: '80', reps: '8', done: true }, { kg: '85', reps: '7', done: true }, { kg: '85', reps: '', done: false }, { kg: '', reps: '', done: false } ] }, { id: 'ex-incline', sets: [ { kg: '', reps: '', done: false }, { kg: '', reps: '', done: false }, { kg: '', reps: '', done: false } ] } ] } : null,
+  lastSession: DEMO ? { id: 'w0', date: today, program: 'pg-coach', day: 'd1', min: 58, kcal: 412, volume: 9850, sets: 18 } : null,
+  checkout: { planId: DEMO ? 'pl-half' : null, start: today, addons: DEMO ? ['ad-locker'] : [], promo: null, promoPct: 0, usePoints: false, method: null },
+  booking: { serviceId: DEMO ? 'sv-pt' : null, pkg: DEMO ? '5' : null, coachId: DEMO ? 'co-omar' : null, classId: null, date: DEMO ? '2026-11-17' : null, time: DEMO ? '18:00' : null },
   notifPrefs: { offers: true, bookings: true, membership: true, workouts: true },
   units: 'kg',
   members: staffData.members,

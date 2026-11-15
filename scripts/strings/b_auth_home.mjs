@@ -23,7 +23,7 @@ export default {
     readyTitle: ['Your plan is ready, {name}!', 'خطتك جاهزة يا {name}!'], readySub: ['Based on your goal and body metrics.', 'بناءً على هدفك وقياسات جسمك.'], daily: ['Daily calories', 'السعرات اليومية'], protein: ['Protein', 'بروتين'], carbs: ['Carbs', 'كربوهيدرات'], fat: ['Fat', 'دهون'], suggested: ['Suggested program', 'البرنامج المقترح'], letsGo: ['Let\'s go', 'يلّا نبدأ'],
   },
   home: {
-    hi: ['Hi, {name} 👋', 'مرحباً {name} 👋'], hiGuest: ['Welcome to Empire 👋', 'أهلاً بك في إمباير 👋'], ready: ['Ready to train today?', 'جاهز تتدرّب اليوم؟'], searchPh: ['Search plans, products, machines…', 'ابحث عن اشتراكات، منتجات، أجهزة…'],
+    hi: ['Hi, {name} 👋', 'مرحباً {name} 👋'], hiGuest: ['Welcome 👋', 'أهلاً بك 👋'], ready: ['Ready to train today?', 'جاهز تتدرّب اليوم؟'], searchPh: ['Search plans, products, machines…', 'ابحث عن اشتراكات، منتجات، أجهزة…'],
     memberCard: ['Membership', 'العضوية'], daysLeft: ['{n} days left', 'باقي {n} يوم'], validUntil: ['Valid until {d}', 'صالح حتى {d}'], showQr: ['Check in', 'دخول'], pendingPay: ['Pay at reception to activate', 'ادفع في الاستقبال للتفعيل'], frozenUntil: ['Frozen · resumes {d}', 'مجمّد · يعود {d}'],
     joinTitle: ['Become an Empire member', 'كن عضواً في إمباير'], joinBody: ['Plans from AED 299/month. Gym or online.', 'اشتراكات من ٢٩٩ درهم/شهر. في الجيم أو أونلاين.'], joinCta: ['View plans', 'عرض الاشتراكات'],
     quick: ['Explore', 'استكشف'], q_plans: ['Plans', 'الاشتراكات'], q_shop: ['Shop', 'المتجر'], q_services: ['Services', 'الخدمات'], q_classes: ['Classes', 'الحصص'], q_machines: ['Machines', 'الأجهزة'], q_rewards: ['Rewards', 'المكافآت'], q_offers: ['Offers', 'العروض'], q_progress: ['Progress', 'التقدم'],

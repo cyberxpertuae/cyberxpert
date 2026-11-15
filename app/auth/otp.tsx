@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Button, Icon, useToast } from '../../src/components';
+import { Screen, T, Row, Col, Button, Icon, useToast, ltr } from '../../src/components';
 import { colors, fonts, radius } from '../../src/theme';
 import { authService } from '../../src/services/authService';
 
@@ -33,7 +33,7 @@ export default function Otp() {
       </View>
       <Col gap={6}>
         <T v="display">{t('auth.otpTitle')}</T>
-        <T v="body" color={colors.textMuted}>{t('auth.otpSub', { to })}</T>
+        <T v="body" color={colors.textMuted}>{t('auth.otpSub', { to: ltr(to) })}</T>
       </Col>
       <Pressable onPress={() => ref.current?.focus()}>
         <Row gap={12} justify="center" style={{ direction: 'ltr', flexDirection: 'row' } as any}>

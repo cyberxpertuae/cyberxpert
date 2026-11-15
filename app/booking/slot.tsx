@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Button, Steps, DateStrip, Skeleton, useToast } from '../../src/components';
+import { Screen, T, Row, Col, Button, Steps, DateStrip, Skeleton, useToast, Wrap } from '../../src/components';
 import { colors, radius } from '../../src/theme';
 import { useApp } from '../../src/store/app';
 import { bookingService } from '../../src/services/bookingService';
@@ -31,7 +31,7 @@ export default function Slot() {
   const group = (label: string, list: { time: string; taken: boolean }[]) => (
     <Col gap={8}>
       <T v="captionStrong" color={colors.textMuted}>{label}</T>
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+      <Wrap style={{ gap: 8 }}>
         {list.map((s) => {
           const on = time === s.time;
           return (
@@ -40,7 +40,7 @@ export default function Slot() {
             </Pressable>
           );
         })}
-      </View>
+      </Wrap>
     </Col>
   );
   return (

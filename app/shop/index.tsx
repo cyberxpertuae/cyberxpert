@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, IconButton, ChipRow, SkeletonList, EmptyState, ProductCard, Sheet, Chip, Button, ErrorState } from '../../src/components';
+import { Screen, T, Row, Col, Icon, IconButton, ChipRow, SkeletonList, EmptyState, ProductCard, Sheet, Chip, Button, ErrorState, Wrap } from '../../src/components';
 import { colors, fonts, radius } from '../../src/theme';
 import { useApp } from '../../src/store/app';
 import { shopService, ProductQuery } from '../../src/services/shopService';
@@ -33,7 +33,7 @@ export default function Shop() {
       </Row>
       <ChipRow items={cats} value={cat} onChange={setCat} />
       {loading ? <SkeletonList rows={4} card={110} /> : error ? <ErrorState onRetry={reload} /> : !data?.length ? <EmptyState icon="bag-outline" title={t('shop.empty')} body={t('shop.emptyBody')} action={t('common.reset')} onAction={() => { setFilter({ sort: 'popular' }); setQ(''); setCat('all'); }} /> : (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>{data.map((p) => <ProductCard key={p.id} p={p} />)}</View>
+        <Wrap style={{ gap: 12 }}>{data.map((p) => <ProductCard key={p.id} p={p} />)}</Wrap>
       )}
       <Sheet visible={sheet} onClose={() => setSheet(false)} title={t('shop.filter')}>
         <Col gap={14}>

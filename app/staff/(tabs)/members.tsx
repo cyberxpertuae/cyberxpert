@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { View } from 'react-native';
 import { useI18n } from '../../../src/i18n';
-import { Screen, T, Row, Col, Card, Input, ChipRow, StatusBadge, TierBadge, SkeletonList, EmptyState, IconButton } from '../../../src/components';
+import { Screen, T, Row, Col, Card, Input, ChipRow, StatusBadge, TierBadge, SkeletonList, EmptyState, IconButton, ltr } from '../../../src/components';
 import { colors } from '../../../src/theme';
 import { useApp } from '../../../src/store/app';
 import { staffService } from '../../../src/services/staffService';
@@ -30,7 +30,7 @@ export default function Members() {
             <View style={{ width: 44, height: 44, borderRadius: 22, backgroundColor: colors.black, alignItems: 'center', justifyContent: 'center' }}><T v="bodyStrong" color={colors.yellow}>{tr(m.name).slice(0, 1)}</T></View>
             <Col style={{ flex: 1 }} gap={2}>
               <Row gap={6}><T v="bodyStrong" numberOfLines={1} style={{ flexShrink: 1 }}>{tr(m.name)}</T><TierBadge tier={m.tier} small /></Row>
-              <T v="micro" color={colors.textMuted}>{m.id} · +971 {m.phone}</T>
+              <T v="micro" color={colors.textMuted}>{ltr(`${m.id} · +971 ${m.phone}`)}</T>
               <T v="micro" color={colors.textMuted}>{tr(catalogService.planSync(m.plan)?.name)} · {t('staff.expires', { d: f.short(m.end) })}</T>
             </Col>
             <StatusBadge status={m.status} />

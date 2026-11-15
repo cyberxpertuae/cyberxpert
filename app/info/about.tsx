@@ -2,7 +2,7 @@ import React from 'react';
 import { Linking, View } from 'react-native';
 import { Image } from 'expo-image';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Img, Button, KV, IconName } from '../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Img, Button, KV, IconName, Wrap } from '../../src/components';
 import { colors, radius } from '../../src/theme';
 import { images } from '../../src/data/images';
 import { gym } from '../../src/services/catalogService';
@@ -22,9 +22,9 @@ export default function About() {
       <T v="captionStrong" color={colors.gold}>{tr(gym.tagline)}</T>
       <T v="body" color={colors.textMuted}>{tr(gym.about)}</T>
       <T v="h3">{t('info.facilities')}</T>
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+      <Wrap style={{ gap: 8 }}>
         {facilities.map((f) => <Row key={f.k} gap={8} style={{ width: '48%', backgroundColor: colors.surface, borderRadius: radius.md, padding: 10 }}><Icon name={f.i} size={18} color={colors.yellowDark} /><T v="caption" style={{ flex: 1 }}>{t(`info.${f.k}`)}</T></Row>)}
-      </View>
+      </Wrap>
       <Card style={{ gap: 4 }}><T v="h3">{t('info.hours')}</T>{gym.hours.map((h, i) => <KV key={i} k={tr(h.days)} v={tr(h.time)} />)}</Card>
       <Card style={{ gap: 8 }}>
         <T v="h3">{t('info.location')}</T>

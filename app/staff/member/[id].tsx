@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Linking, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useI18n } from '../../../src/i18n';
-import { Screen, T, Row, Col, Card, Button, StatusBadge, TierBadge, KV, Skeleton, useToast, Stat } from '../../../src/components';
+import { Screen, T, Row, Col, Card, Button, StatusBadge, TierBadge, KV, Skeleton, useToast, Stat, ltr } from '../../../src/components';
 import { colors } from '../../../src/theme';
 import { useApp } from '../../../src/store/app';
 import { staffService } from '../../../src/services/staffService';
@@ -20,7 +20,8 @@ export default function MemberDetail() {
   const toast = useToast();
   const { loading } = useAsync(() => staffService.member(id!), [id]);
   const m = useApp((s) => s.members.find((x) => x.id === id));
-  const visits = useApp((s) => s.visits.filter((v) => v.member === id));
+  const allVisits = useApp((s) => s.visits);
+  const visits = allVisits.filter((v) => v.member === id);
   const [busy, setBusy] = useState<string | null>(null);
   if (loading || !m) return <Screen title=" "><Skeleton h={180} r={24} /></Screen>;
   const plan = catalogService.planSync(m.plan);
@@ -36,7 +37,7 @@ export default function MemberDetail() {
         <KV k={t('card.memberId')} v={m.id} color={colors.onDark} labelColor={colors.onDarkMuted} />
         <KV k={t('card.plan')} v={tr(plan?.name)} color={colors.onDark} labelColor={colors.onDarkMuted} />
         <KV k={t('card.valid')} v={f.date(m.end)} color={colors.onDark} labelColor={colors.onDarkMuted} />
-        <KV k={t('staff.phone')} v={`+971 ${m.phone}`} color={colors.onDark} labelColor={colors.onDarkMuted} />
+        <KV k={t('staff.phone')} v={ltr(`+971 ${m.phone}`)} color={colors.onDark} labelColor={colors.onDarkMuted} />
       </Card>
       <Row gap={10}><Stat icon="enter-outline" value={num(m.visits)} label={t('staff.totalVisits')} /><Stat icon="time-outline" value={f.short(m.lastVisit)} label={t('staff.lastVisit', { d: '' }).trim()} /></Row>
       {m.status === 'pending' ? <Button testID="sm-activate" title={t('staff.activate')} icon="checkmark-circle" loading={busy === 'a'} onPress={() => act('a', () => staffService.update(m.id, { status: 'active' }), t('staff.activated'))} /> : null}

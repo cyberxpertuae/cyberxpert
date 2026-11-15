@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Img, Button, SkeletonList, IconName } from '../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Img, Button, SkeletonList, IconName, Wrap } from '../../src/components';
 import { colors } from '../../src/theme';
 import { images } from '../../src/data/images';
 import { machinesService } from '../../src/services/machinesService';
@@ -17,7 +17,7 @@ export default function Machines() {
     <Screen title={t('machines.title')} header={{ subtitle: t('machines.sub') }}>
       <Button testID="mc-scan" title={t('machines.scan')} icon="scan-outline" variant="dark" onPress={() => router.push('/machines/scan')} />
       {loading ? <SkeletonList rows={6} card={110} /> : (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+        <Wrap style={{ gap: 12 }}>
           {(data ?? []).map((z) => (
             <Card key={z.id} testID={`zone-${z.id}`} padded={false} style={{ width: '47.5%', height: 190 }} onPress={() => router.push(`/machines/zone/${z.id}`)}>
               <Img src={images[z.img]} style={{ position: 'absolute', width: '100%', height: '100%' }} />
@@ -28,7 +28,7 @@ export default function Machines() {
               </LinearGradient>
             </Card>
           ))}
-        </View>
+        </Wrap>
       )}
     </Screen>
   );

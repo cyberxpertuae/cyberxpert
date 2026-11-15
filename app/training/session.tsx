@@ -6,7 +6,7 @@ import { Screen, T, Row, Col, Icon, Card, Img, Button, Dialog, IconButton, Progr
 import { colors, fonts, radius } from '../../src/theme';
 import { useApp } from '../../src/store/app';
 import { images } from '../../src/data/images';
-import { trainingService, exerciseSync } from '../../src/services/trainingService';
+import { trainingService, exerciseSync, programSync } from '../../src/services/trainingService';
 
 const mmss = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -42,10 +42,10 @@ export default function Session() {
   };
   const addSet = () => useApp.getState().set({ session: { ...session, exercises: session.exercises.map((e, i) => (i !== idx ? e : { ...e, sets: [...e.sets, { kg: '', reps: '', done: false }] })) } });
   const input = (v: string, onChange: (x: string) => void, ph: string, id: string) => (
-    <TextInput testID={id} value={v} onChangeText={(x) => onChange(x.replace(/[^\d.]/g, ''))} placeholder={ph} placeholderTextColor={colors.textSubtle} keyboardType="decimal-pad" style={{ flex: 1, height: 42, borderRadius: radius.md, backgroundColor: colors.surface2, textAlign: 'center', fontFamily: fonts.semibold, fontSize: 15, color: colors.text }} />
+    <TextInput testID={id} value={v} onChangeText={(x) => onChange(x.replace(/[^\d.]/g, ''))} placeholder={ph} placeholderTextColor={colors.textSubtle} keyboardType="decimal-pad" style={{ flex: 1, flexBasis: 0, minWidth: 0, height: 42, borderRadius: radius.md, backgroundColor: colors.surface2, textAlign: 'center', fontFamily: fonts.semibold, fontSize: 15, color: colors.text }} />
   );
   return (
-    <Screen title={session.name} header={{ onBack: () => setQuit(true), right: <T v="h3" color={colors.yellowDark}>{mmss(Math.floor((now - session.startedAt) / 1000))}</T> }}
+    <Screen title={(() => { const d = programSync(session.programId)?.days.find((x) => x.id === session.dayId); return d ? tr(d.name) : session.name; })()} header={{ onBack: () => setQuit(true), right: <T v="h3" color={colors.yellowDark}>{mmss(Math.floor((now - session.startedAt) / 1000))}</T> }}
       footer={<Row gap={10}>
         <Button title={t('training.prevEx')} variant="outline" full={false} disabled={idx === 0} onPress={() => setIdx(idx - 1)} style={{ flex: 1 }} />
         {idx < session.exercises.length - 1 ? <Button testID="ses-next" title={t('training.nextEx')} full={false} style={{ flex: 1.4 }} iconEnd="arrow-forward" onPress={() => setIdx(idx + 1)} /> : <Button testID="ses-finish" title={t('training.finish')} variant="dark" full={false} style={{ flex: 1.4 }} icon="flag" onPress={() => setFinish(true)} />}

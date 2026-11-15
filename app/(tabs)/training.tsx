@@ -3,7 +3,7 @@ import { Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Img, ProgressBar, Button, SectionHeader, Bars, Stat, IconName, IconButton } from '../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Img, ProgressBar, Button, SectionHeader, Bars, Stat, IconName, IconButton, Wrap } from '../../src/components';
 import { colors, radius, shadow } from '../../src/theme';
 import { useApp, TODAY } from '../../src/store/app';
 import { images } from '../../src/data/images';
@@ -57,7 +57,7 @@ export default function Training() {
         <Stat icon="flame-outline" value={num(wk.reduce((a, h) => a + h.kcal, 0))} label={t('common.kcal')} />
       </Row>
       <Card><Bars data={perDay} labels={week.map((d) => t(`days.${new Date(d + 'T00:00:00').getDay()}`).slice(0, 2))} highlight={6} /></Card>
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10 }}>
+      <Wrap style={{ gap: 10 }}>
         {links.map((l) => (
           <Pressable testID={`tr-link-${l.to.split('/').pop()}`} key={l.to} onPress={() => router.push(l.to as any)} style={{ width: '48%', flexGrow: 1 }}>
             <Row gap={10} style={{ backgroundColor: colors.surface, borderRadius: radius.lg, padding: 14 }}>
@@ -66,7 +66,7 @@ export default function Training() {
             </Row>
           </Pressable>
         ))}
-      </View>
+      </Wrap>
     </Screen>
   );
 }

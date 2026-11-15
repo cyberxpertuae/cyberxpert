@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { router } from 'expo-router';
 import { useI18n } from '../../src/i18n';
-import { Screen, T, Row, Col, Icon, Card, Img, ChipRow, SkeletonList, Pill } from '../../src/components';
+import { Screen, T, Row, Col, Icon, Card, Img, ChipRow, SkeletonList, Pill, Wrap } from '../../src/components';
 import { colors } from '../../src/theme';
 import { useApp } from '../../src/store/app';
 import { images } from '../../src/data/images';
@@ -19,7 +19,7 @@ export default function Catalog() {
     <Screen title={t('rewards.catalog')} header={{ right: <Row gap={4}><Icon name="star" size={16} color={colors.gold} /><T v="bodyStrong">{num(user?.points ?? 0)}</T></Row> }}>
       <ChipRow items={(['all', 'shop', 'services', 'access', 'discounts'] as const).map((k) => ({ key: k, label: t(`rewards.cats_${k}`) }))} value={cat} onChange={setCat} />
       {loading ? <SkeletonList rows={5} /> : (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+        <Wrap style={{ gap: 12 }}>
           {(data ?? []).map((r) => {
             const locked = tierRank(user?.tier ?? 'bronze') < tierRank(r.minTier);
             return (
@@ -35,7 +35,7 @@ export default function Catalog() {
               </Card>
             );
           })}
-        </View>
+        </Wrap>
       )}
     </Screen>
   );
