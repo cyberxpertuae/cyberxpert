@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://algharayaf.vercel.app/sitemap.xml
