@@ -48,6 +48,7 @@ const CONFIG = {
 
   // ---- التواصل ----
   whatsapp:     "971581777245",              // رقم الواتساب (بدون + وبدون مسافات)
+  whatsappFloat:"971582499741",              // رقم زر الواتساب الأخضر العائم فقط (0582499741)
   phone:        "+971581777245",             // رقم الاتصال
   phoneDisplay: "+971 58 177 7245",          // الرقم كما يظهر في الموقع
   instagram:    "https://www.instagram.com/algharayaf.perfume",  // انستغرام
@@ -787,7 +788,7 @@ body.menu-open{overflow:hidden}
   </div>
 </footer>
 
-<a class="wa-float js-wa" data-msg="general" href="#" aria-label="Chat on WhatsApp"><svg><use href="#i-wa-solid"/></svg></a>
+<a class="wa-float" id="waFloat" href="#" aria-label="Chat on WhatsApp"><svg><use href="#i-wa-solid"/></svg></a>
 <a class="btn fcta on-light" id="fcta" href="#collection"><span data-i18n="fcta">Shop Now</span></a>
 
 <script>
@@ -922,6 +923,7 @@ function renderStatic(){
   $$(".js-map").forEach(e=>e.href=CONFIG.mapLink);
   $$(".js-tel").forEach(e=>e.href="tel:"+CONFIG.phone);
   $$(".js-wa").forEach(e=>{e.href=wa(t("msg.general")); e.target="_blank"; e.rel="noopener"});
+  const wf=$("#waFloat"); wf.href=`https://wa.me/${CONFIG.whatsappFloat||CONFIG.whatsapp}?text=${encodeURIComponent(t("msg.general"))}`; wf.target="_blank"; wf.rel="noopener";
   $("#yr").textContent=new Date().getFullYear();
   // ticker (duplicated for seamless loop)
   const items=[1,2,3,4,5,6].map(i=>`<span>${esc(t("ticker."+i))}<svg><use href="#i-star4"/></svg></span>`).join("");
