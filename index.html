@@ -764,6 +764,28 @@ dialog#privacyDialog::backdrop{ background:rgba(11,11,12,0.7); }
 /* utility */
 .text-center{ text-align:center; }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2227114321351794');
+fbq('track', 'PageView');
+/* a tap on any WhatsApp button counts as a Contact */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+  if(a && window.fbq) fbq('track', 'Contact');
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2227114321351794&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -1115,7 +1137,7 @@ dialog#privacyDialog::backdrop{ background:rgba(11,11,12,0.7); }
   <div class="privacy-inner">
     <button type="button" class="privacy-close" id="privacyClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <h3 id="privacyTitle" data-i18n="privacy.h">Privacy Policy</h3>
-    <p data-i18n="privacy.p1">We only collect what you choose to send us: your name, phone, email and project details when you contact us, plus basic anonymous usage data to improve this website.</p>
+    <p data-i18n="privacy.p1">We only collect what you choose to send us: your name, phone, email and project details when you contact us, plus basic usage data. This site uses the Meta Pixel to measure visits and to show our ads to people who visited, which means Meta receives information about your visit.</p>
     <p data-i18n="privacy.p2">We use it to reply to you, prepare proposals and deliver the services you request. We never sell or rent your personal data, and share it only with providers that help us run our business, or when the law requires it.</p>
     <p data-i18n="privacy.p3">This site remembers your language choice in your browser. You can ask us at any time to see, correct or delete the data we hold about you using the contact details on this page.</p>
   </div>
@@ -1261,7 +1283,7 @@ const I18N_AR = {
   "footer.rights": "جميع الحقوق محفوظة.",
   "footer.privacy": "سياسة الخصوصية",
   "privacy.h": "سياسة الخصوصية",
-  "privacy.p1": "نجمع فقط ما تختار إرساله إلينا: اسمك وهاتفك وبريدك وتفاصيل مشروعك عند التواصل معنا، إضافة إلى بيانات استخدام أساسية مجهولة الهوية لتحسين هذا الموقع.",
+  "privacy.p1": "نجمع فقط ما تختار إرساله إلينا: اسمك وهاتفك وبريدك وتفاصيل مشروعك عند التواصل معنا، إضافة إلى بيانات استخدام أساسية. ويستخدم هذا الموقع بكسل ميتا لقياس الزيارات وعرض إعلاناتنا لمن زار الموقع، ما يعني أن ميتا تستلم معلومات عن زيارتك.",
   "privacy.p2": "نستخدمها للرد عليك وإعداد العروض وتقديم الخدمات التي تطلبها. لا نبيع بياناتك الشخصية ولا نؤجرها أبداً، ولا نشاركها إلا مع مزودي خدمات يساعدوننا في إدارة أعمالنا، أو عندما يتطلب القانون ذلك.",
   "privacy.p3": "يتذكر هذا الموقع اختيارك للغة داخل متصفحك. يمكنك أن تطلب منا في أي وقت الاطلاع على بياناتك أو تصحيحها أو حذفها عبر وسائل التواصل في هذه الصفحة.",
   "float.cta": "استشارة مجانية"
@@ -1548,6 +1570,7 @@ const UI_EN = { "form.error": "Please add your name and a few project details." 
     const lines = ar
       ? [`مرحباً ${CONFIG.nameAr}،`, `الاسم: ${name}`, company ? `الشركة: ${company}` : '', phone ? `الهاتف: ${phone}` : '', `الخدمة: ${service}`, `التفاصيل: ${msg}`]
       : [`Hi ${CONFIG.name},`, `Name: ${name}`, company ? `Company: ${company}` : '', phone ? `Phone: ${phone}` : '', `Service: ${service}`, `Details: ${msg}`];
+    if(window.fbq) fbq('track', 'Lead');  /* contact form sent */
     window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(lines.filter(Boolean).join('\n')), '_blank', 'noopener');
   });
 })();
