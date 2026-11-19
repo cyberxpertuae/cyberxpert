@@ -55,8 +55,45 @@ class Api:
     def step(self, session_id: int, results: list[dict[str, Any]]) -> dict[str, Any]:
         return self._call("POST", f"/api/v1/sessions/{session_id}/step", {"results": results})
 
-    def message(self, session_id: int, text: str) -> dict[str, Any]:
-        return self._call("POST", f"/api/v1/sessions/{session_id}/message", {"text": text})
+    def message(self, session_id: int, text: str, attachments: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+        return self._call("POST", f"/api/v1/sessions/{session_id}/message",
+                          {"text": text, "attachments": attachments or []})
+
+    # -- dashboard ------------------------------------------------------------------
+    def me(self) -> dict[str, Any]:
+        return self._call("GET", "/api/v1/me")
+
+    def projects(self) -> list[dict[str, Any]]:
+        return self._call("GET", "/api/v1/projects")
+
+    def save_project(self, data: dict[str, Any], project_id: int | None = None) -> dict[str, Any]:
+        if project_id is None:
+            return self._call("POST", "/api/v1/projects", data)
+        return self._call("PUT", f"/api/v1/projects/{project_id}", data)
+
+    def chat(self, project_id: int) -> list[dict[str, Any]]:
+        return self._call("GET", f"/api/v1/projects/{project_id}/chat")
+
+    def open_approval(self, session_id: int, kind: str, target: str, reason: str) -> int:
+        return self._call("POST", f"/api/v1/sessions/{session_id}/approvals",
+                          {"kind": kind, "target": target, "reason": reason})["id"]
+
+    def decide(self, approval_id: int, allowed: bool) -> None:
+        self._call("POST", f"/api/v1/approvals/{approval_id}/decide", {"allowed": allowed}, timeout=5.0)
+
+    def control(self, session_id: int | None) -> dict[str, Any]:
+        q = f"?session_id={session_id}" if session_id is not None else ""
+        return self._call("GET", f"/api/v1/control{q}", timeout=3.0)
+
+    def whatsapp_link(self) -> dict[str, str]:
+        return self._call("POST", "/api/v1/whatsapp/link")
+
+    # -- owner only (the server refuses these for engineer accounts) -------------------
+    def admin(self, method: str, path: str, json: Any = None) -> Any:
+        return self._call(method, f"/api/v1/admin/{path}", json)
+
+    def finish(self, session_id: int) -> None:
+        self._call("POST", f"/api/v1/sessions/{session_id}/finish", timeout=5.0)
 
     def retry(self, session_id: int) -> dict[str, Any]:
         return self._call("POST", f"/api/v1/sessions/{session_id}/retry")

@@ -31,6 +31,27 @@ Built:
   checked before every action and inside typing), immediate stop on connection loss or account
   disable.
 
+## Status: Stage 2 (dashboard), awaiting the owner's approval
+
+* One app, two roles: the same installer and icon; the login decides the dashboard.
+  * Engineer: projects · agent chat (text, Windows voice typing, file attach: PDF / images / Excel)
+    · live log · output files with built-in PDF/image viewer · Start / Pause / Stop · Allow-Deny and
+    Approve-Reject dialogs · WhatsApp button · always-visible red EMERGENCY STOP (+ Ctrl+Shift+Q).
+  * Owner: everything above + Monitoring tab (live sessions, session log with steps and cost,
+    permission log, accounts enable/disable, model / effort / step limit, spend today and month).
+  * Roles are enforced on the server (`require_owner`): an engineer token gets 403 on every owner
+    route, whatever the app does.
+* Arabic (right-to-left, default) and English. Technical names stay in English.
+* Single screen: the dashboard shrinks to a corner panel (status + Stop) while the agent works and
+  comes back when approval or a reply is needed.
+* 1-second heartbeat: remote Stop (owner / WhatsApp), WhatsApp approval answers, account disable,
+  and connection loss all stop the agent within about a second.
+* WhatsApp hooks: number linking with a one-time code, inbound Stop / Approve / Reject from the
+  registered number only, outbound notifications (approval needed, done, error, limit). The
+  provider is the owner's choice (`CX_WHATSAPP_*` settings).
+
+Run the dashboard: `CX_SERVER=https://YOUR-SERVER python -m cxagent.ui` (from `desktop/`).
+
 ## Run the tests
 
 ```bash
@@ -39,7 +60,7 @@ pip install -r server/requirements.txt -r desktop/requirements.txt pytest
 (cd desktop && python -m pytest tests -q)         # executor / guard / keys
 # Full end-to-end on a virtual X display with a real text editor (Linux; needs xdotool,
 # mousepad, x11-apps). The Claude API is replaced by tools/fake_claude.py.
-xvfb-run -s "-screen 0 1920x1080x24" python -m pytest tools/test_e2e_x11.py -v
+xvfb-run -s "-screen 0 1920x1080x24" python -m pytest tools -v   # agent + dashboard end to end
 ```
 
 ## Stage 1 live test on Windows with Notepad (needs the real API key)

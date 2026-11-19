@@ -66,3 +66,55 @@ def start_stop_hotkey(on_stop: Callable[[], None]) -> None:
                 on_stop()
 
     threading.Thread(target=loop, name="stop-hotkey", daemon=True).start()
+
+
+def running_apps() -> list[tuple[str, str]]:
+    """(process name, window title) of visible windows, to pick approved apps without
+    guessing executable names."""
+    out: dict[str, str] = {}
+    if IS_WINDOWS:
+        import ctypes
+        from ctypes import wintypes
+
+        from .backends.windows import _process_name
+
+        user32 = ctypes.WinDLL("user32", use_last_error=True)
+        proc = ctypes.WINFUNCTYPE(wintypes.BOOL, wintypes.HWND, wintypes.LPARAM)
+
+        def cb(hwnd, _):
+            if user32.IsWindowVisible(hwnd) and user32.GetWindowTextLengthW(hwnd) > 0:
+                buf = ctypes.create_unicode_buffer(256)
+                user32.GetWindowTextW(hwnd, buf, 256)
+                name = _process_name(hwnd)
+                if name:
+                    out.setdefault(name, buf.value)
+            return True
+
+        user32.EnumWindows(proc(cb), 0)
+    else:
+        import subprocess
+
+        try:
+            ids = subprocess.run(["xdotool", "search", "--onlyvisible", "--name", ""],
+                                 capture_output=True, text=True, timeout=5).stdout.split()
+        except (OSError, subprocess.SubprocessError):
+            ids = []
+        from .backends.x11 import _comm
+
+        for w in ids:
+            name = _comm(w)
+            if name:
+                title = subprocess.run(["xdotool", "getwindowname", w], capture_output=True, text=True).stdout.strip()
+                out.setdefault(name, title)
+    own = own_process_names()
+    return sorted((k, v) for k, v in out.items() if k not in own)
+
+
+def voice_typing() -> bool:
+    """Open Windows voice typing (Win+H) in the focused text box. Supports Arabic on Windows 11."""
+    if not IS_WINDOWS:
+        return False
+    from .backends.windows import WindowsInput
+
+    WindowsInput().key("super+h", 1)
+    return True

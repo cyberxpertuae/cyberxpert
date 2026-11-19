@@ -47,6 +47,11 @@ class ConsoleUI:
         print(f"\n[QUESTION] {question}", flush=True)
         return self.auto["answer"] if "answer" in self.auto else input("  Your answer: ")
 
+    def confirm_retry(self, message: str) -> bool:
+        if "reply" in self.auto:
+            return False
+        return input("Retry? [y/n]: ").strip().lower().startswith("y")
+
     def reply(self) -> str:
         if "reply" in self.auto:
             return self.auto["reply"]
