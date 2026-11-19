@@ -1,0 +1,5 @@
+# Cyber Xpert – Panel Engineer desktop app (Windows). No secrets live here.
+httpx>=0.27
+mss>=9.0
+pillow>=10.4
+# Stage 2 adds: PySide6 (dashboard UI)

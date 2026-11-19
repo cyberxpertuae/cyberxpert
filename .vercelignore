@@ -1,0 +1,2 @@
+# The website deploy must never serve the Panel Engineer source code.
+panel-engineer/

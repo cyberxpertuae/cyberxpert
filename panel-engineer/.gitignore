@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+.env
+# The REAL hidden prompt and knowledge files live only on the server, never in git.
+server/prompts/
